@@ -101,8 +101,26 @@ class HomeController extends Controller
         $chartColors = ['#3a57e8', '#4bc7d2', '#fd7e14', '#dc3545', '#6f42c1', '#ffc107'];
 
         // --- DATA BARU UNTUK CHART PERBANDINGAN PIE ---
-        $comparisonChartLabels = ['Diregister', 'Diperiksa', 'Konsultasi'];
-        $comparisonChartData = [$jumlahSasaranDiregister, $jumlahSasaranDiperiksa, $jumlahSasaranKonsultasi];
+        $totalSasaranDalamFilter = $sasaransFiltered->count();
+
+        // 1. Dari sasaran yang sudah difilter, kita ambil ID unik yang sudah pernah diperiksa.
+        $sasaranYangDiperiksaIds = $pemeriksaansFiltered->pluck('sasaran_id')->unique();
+        $totalDiperiksa = $sasaranYangDiperiksaIds->count();
+
+        // 2. Dari yang sudah diperiksa itu, kita hitung berapa yang sudah lanjut ke tahap konsultasi.
+        $jumlahMendapatKeduanya = Sasaran::whereIn('id', $sasaranYangDiperiksaIds)
+                                         ->whereHas('pemeriksaans.konsultasis')
+                                         ->count();
+
+        // 3. Hitung yang HANYA diperiksa (sudah diperiksa TAPI belum konsultasi).
+        $jumlahHanyaDiperiksa = $totalDiperiksa - $jumlahMendapatKeduanya;
+
+        // 4. Hitung yang BELUM diperiksa sama sekali (sasaran terdaftar dikurangi total yang sudah diperiksa).
+        $jumlahTidakKeduanya = $totalSasaranDalamFilter - $totalDiperiksa;
+
+        // Siapkan data final untuk dikirim ke view
+        $comparisonChartLabels = ['Belum Diperiksa/Konsul', 'Hanya Diperiksa', 'Diperiksa & Konsultasi'];
+        $comparisonChartData = [$jumlahTidakKeduanya, $jumlahHanyaDiperiksa, $jumlahMendapatKeduanya];
 
         // --- LOGIKA UNTUK KARTU RINGKASAN (PENGGUNA & DOKTER) ---
         // (Logika Anda sebelumnya)
@@ -118,7 +136,7 @@ class HomeController extends Controller
         $pemeriksaanTerbaru = DB::table('pemeriksaans')->join('sasarans', 'pemeriksaans.sasaran_id', '=', 'sasarans.id')->select(DB::raw("CONCAT('Pemeriksaan untuk ', sasarans.nama_lengkap) as teks"), 'pemeriksaans.created_at as tanggal')->whereIn('sasarans.organisasi_id', $aktivitasQueryIds);
         $konsultasiTerbaru = DB::table('konsultasis')->join('pemeriksaans', 'konsultasis.pemeriksaan_id', '=', 'pemeriksaans.id')->join('sasarans', 'pemeriksaans.sasaran_id', '=', 'sasarans.id')->select(DB::raw("CONCAT('Konsultasi untuk ', sasarans.nama_lengkap) as teks"), 'konsultasis.created_at as tanggal')->whereIn('sasarans.organisasi_id', $aktivitasQueryIds);
         
-        $aktivitasTerbaru = $sasaranTerbaru->unionAll($pemeriksaanTerbaru)->unionAll($konsultasiTerbaru)->orderBy('tanggal', 'desc')->limit(5)->get();
+        $aktivitasTerbaru = $sasaranTerbaru->unionAll($pemeriksaanTerbaru)->unionAll($konsultasiTerbaru)->orderBy('tanggal', 'desc')->limit(15)->get();
 
         // ================================================================
         // BAGIAN 5: KIRIM SEMUA DATA KE VIEW

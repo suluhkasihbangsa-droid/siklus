@@ -12,6 +12,7 @@ use App\Http\Controllers\OrganisasiController;
 use App\Http\Controllers\AturanInterpretasiController;
 use App\Http\Controllers\KonsultasiController;
 use App\Http\Controllers\PublicRegistrationController;
+use App\Http\Controllers\ObatController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -126,6 +127,18 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['role:admin'])->group(function() {
         // Route::resource('users', UserController::class);
         Route::resource('aturan-interpretasi', AturanInterpretasiController::class); // <-- FIX: Tambahkan route ini
+
+        Route::prefix('obat')->name('obat.')->group(function() {
+            Route::get('/', [ObatController::class, 'index'])->name('index');
+            Route::get('/create', [ObatController::class, 'create'])->name('create');
+            Route::post('/', [ObatController::class, 'store'])->name('store');
+            Route::get('/{obat}/edit', [ObatController::class, 'edit'])->name('edit');
+            Route::put('/{obat}', [ObatController::class, 'update'])->name('update');
+            Route::delete('/{obat}', [ObatController::class, 'destroy'])->name('destroy');
+            Route::get('/download-template', [ObatController::class, 'downloadTemplate'])->name('download_template');
+            Route::post('/import', [ObatController::class, 'import'])->name('import');
+
+        });
         
         // Security Module
         Route::prefix('security')->group(function () {
