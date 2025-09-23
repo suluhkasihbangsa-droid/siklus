@@ -1,0 +1,1794 @@
+/*!
+*
+* Template: Hope-Ui - Responsive Bootstrap 5 Admin Dashboard Template
+* Author: iqonic.design
+* Design and Developed by: iqonic.design
+* NOTE: This file contains the styling for color variable.
+*
+*/
+a {
+  color: var(--bs-primary);
+}
+
+a:hover {
+  color: var(--bs-primary);
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  color: var(--bs-primary-shade-80);
+}
+
+body {
+  background-color: var(--bs-body-bg);
+}
+
+:root {
+  --bs-heading-color: rgb(11.6, 17.4, 46.4);
+  --bs-primary: #3a57e8;
+  --bs-primary-shade-80: rgb(11.6, 17.4, 46.4);
+  --bs-primary-shade-60: rgb(23.2, 34.8, 92.8);
+  --bs-primary-shade-40: rgb(34.8, 52.2, 139.2);
+  --bs-primary-shade-20: rgb(46.4, 69.6, 185.6);
+  --bs-primary-tint-80: rgb(215.6, 221.4, 250.4);
+  --bs-primary-tint-60: rgb(176.2, 187.8, 245.8);
+  --bs-primary-tint-40: rgb(136.8, 154.2, 241.2);
+  --bs-primary-tint-20: rgb(97.4, 120.6, 236.6);
+  --bs-primary-rgb: 58, 87, 232;
+  --bs-primary-tint-88: rgb(231.36, 234.84, 252.24);
+}
+:root .theme-color-blue {
+  --bs-heading-color: rgb(11.6, 17.4, 46.4);
+  --bs-blue: #3a57e8;
+  --bs-blue-shade-80: rgb(11.6, 17.4, 46.4);
+  --bs-blue-shade-60: rgb(23.2, 34.8, 92.8);
+  --bs-blue-shade-40: rgb(34.8, 52.2, 139.2);
+  --bs-blue-shade-20: rgb(46.4, 69.6, 185.6);
+  --bs-blue-tint-80: rgb(215.6, 221.4, 250.4);
+  --bs-blue-tint-60: rgb(176.2, 187.8, 245.8);
+  --bs-blue-tint-40: rgb(136.8, 154.2, 241.2);
+  --bs-blue-tint-20: rgb(97.4, 120.6, 236.6);
+  --bs-blue-rgb: 58, 87, 232;
+  --bs-blue-tint-88: rgb(231.36, 234.84, 252.24);
+  --bs-heading-color: rgb(20.4, 3.2, 48.4);
+  --bs-indigo: #6610f2;
+  --bs-indigo-shade-80: rgb(20.4, 3.2, 48.4);
+  --bs-indigo-shade-60: rgb(40.8, 6.4, 96.8);
+  --bs-indigo-shade-40: rgb(61.2, 9.6, 145.2);
+  --bs-indigo-shade-20: rgb(81.6, 12.8, 193.6);
+  --bs-indigo-tint-80: rgb(224.4, 207.2, 252.4);
+  --bs-indigo-tint-60: rgb(193.8, 159.4, 249.8);
+  --bs-indigo-tint-40: rgb(163.2, 111.6, 247.2);
+  --bs-indigo-tint-20: rgb(132.6, 63.8, 244.6);
+  --bs-indigo-rgb: 102, 16, 242;
+  --bs-indigo-tint-88: rgb(236.64, 226.32, 253.44);
+  --bs-heading-color: rgb(22.2, 13.2, 38.6);
+  --bs-purple: #6f42c1;
+  --bs-purple-shade-80: rgb(22.2, 13.2, 38.6);
+  --bs-purple-shade-60: rgb(44.4, 26.4, 77.2);
+  --bs-purple-shade-40: rgb(66.6, 39.6, 115.8);
+  --bs-purple-shade-20: rgb(88.8, 52.8, 154.4);
+  --bs-purple-tint-80: rgb(226.2, 217.2, 242.6);
+  --bs-purple-tint-60: rgb(197.4, 179.4, 230.2);
+  --bs-purple-tint-40: rgb(168.6, 141.6, 217.8);
+  --bs-purple-tint-20: rgb(139.8, 103.8, 205.4);
+  --bs-purple-rgb: 111, 66, 193;
+  --bs-purple-tint-88: rgb(237.72, 232.32, 247.56);
+  --bs-heading-color: rgb(42.8, 10.2, 26.4);
+  --bs-pink: #d63384;
+  --bs-pink-shade-80: rgb(42.8, 10.2, 26.4);
+  --bs-pink-shade-60: rgb(85.6, 20.4, 52.8);
+  --bs-pink-shade-40: rgb(128.4, 30.6, 79.2);
+  --bs-pink-shade-20: rgb(171.2, 40.8, 105.6);
+  --bs-pink-tint-80: rgb(246.8, 214.2, 230.4);
+  --bs-pink-tint-60: rgb(238.6, 173.4, 205.8);
+  --bs-pink-tint-40: rgb(230.4, 132.6, 181.2);
+  --bs-pink-tint-20: rgb(222.2, 91.8, 156.6);
+  --bs-pink-rgb: 214, 51, 132;
+  --bs-pink-tint-88: rgb(250.08, 230.52, 240.24);
+  --bs-heading-color: rgb(38.4, 10, 6.6);
+  --bs-red: #c03221;
+  --bs-red-shade-80: rgb(38.4, 10, 6.6);
+  --bs-red-shade-60: rgb(76.8, 20, 13.2);
+  --bs-red-shade-40: rgb(115.2, 30, 19.8);
+  --bs-red-shade-20: rgb(153.6, 40, 26.4);
+  --bs-red-tint-80: rgb(242.4, 214, 210.6);
+  --bs-red-tint-60: rgb(229.8, 173, 166.2);
+  --bs-red-tint-40: rgb(217.2, 132, 121.8);
+  --bs-red-tint-20: rgb(204.6, 91, 77.4);
+  --bs-red-rgb: 192, 50, 33;
+  --bs-red-tint-88: rgb(247.44, 230.4, 228.36);
+  --bs-heading-color: rgb(50, 33.8, 11.2);
+  --bs-orange: #FAA938;
+  --bs-orange-shade-80: rgb(50, 33.8, 11.2);
+  --bs-orange-shade-60: rgb(100, 67.6, 22.4);
+  --bs-orange-shade-40: rgb(150, 101.4, 33.6);
+  --bs-orange-shade-20: rgb(200, 135.2, 44.8);
+  --bs-orange-tint-80: rgb(254, 237.8, 215.2);
+  --bs-orange-tint-60: rgb(253, 220.6, 175.4);
+  --bs-orange-tint-40: rgb(252, 203.4, 135.6);
+  --bs-orange-tint-20: rgb(251, 186.2, 95.8);
+  --bs-orange-rgb: 250, 169, 56;
+  --bs-orange-tint-88: rgb(254.4, 244.68, 231.12);
+  --bs-heading-color: rgb(48.2, 21.2, 5.4);
+  --bs-yellow: #f16a1b;
+  --bs-yellow-shade-80: rgb(48.2, 21.2, 5.4);
+  --bs-yellow-shade-60: rgb(96.4, 42.4, 10.8);
+  --bs-yellow-shade-40: rgb(144.6, 63.6, 16.2);
+  --bs-yellow-shade-20: rgb(192.8, 84.8, 21.6);
+  --bs-yellow-tint-80: rgb(252.2, 225.2, 209.4);
+  --bs-yellow-tint-60: rgb(249.4, 195.4, 163.8);
+  --bs-yellow-tint-40: rgb(246.6, 165.6, 118.2);
+  --bs-yellow-tint-20: rgb(243.8, 135.8, 72.6);
+  --bs-yellow-rgb: 241, 106, 27;
+  --bs-yellow-tint-88: rgb(253.32, 237.12, 227.64);
+  --bs-heading-color: rgb(5.2, 32, 16.6);
+  --bs-green: #1aa053;
+  --bs-green-shade-80: rgb(5.2, 32, 16.6);
+  --bs-green-shade-60: rgb(10.4, 64, 33.2);
+  --bs-green-shade-40: rgb(15.6, 96, 49.8);
+  --bs-green-shade-20: rgb(20.8, 128, 66.4);
+  --bs-green-tint-80: rgb(209.2, 236, 220.6);
+  --bs-green-tint-60: rgb(163.4, 217, 186.2);
+  --bs-green-tint-40: rgb(117.6, 198, 151.8);
+  --bs-green-tint-20: rgb(71.8, 179, 117.4);
+  --bs-green-rgb: 26, 160, 83;
+  --bs-green-tint-88: rgb(227.52, 243.6, 234.36);
+  --bs-heading-color: rgb(6.4, 40.2, 30.2);
+  --bs-teal: #20c997;
+  --bs-teal-shade-80: rgb(6.4, 40.2, 30.2);
+  --bs-teal-shade-60: rgb(12.8, 80.4, 60.4);
+  --bs-teal-shade-40: rgb(19.2, 120.6, 90.6);
+  --bs-teal-shade-20: rgb(25.6, 160.8, 120.8);
+  --bs-teal-tint-80: rgb(210.4, 244.2, 234.2);
+  --bs-teal-tint-60: rgb(165.8, 233.4, 213.4);
+  --bs-teal-tint-40: rgb(121.2, 222.6, 192.6);
+  --bs-teal-tint-20: rgb(76.6, 211.8, 171.8);
+  --bs-teal-rgb: 32, 201, 151;
+  --bs-teal-tint-88: rgb(228.24, 248.52, 242.52);
+  --bs-heading-color: rgb(1.4, 30.8, 32.4);
+  --bs-cyan: #079aa2;
+  --bs-cyan-shade-80: rgb(1.4, 30.8, 32.4);
+  --bs-cyan-shade-60: rgb(2.8, 61.6, 64.8);
+  --bs-cyan-shade-40: rgb(4.2, 92.4, 97.2);
+  --bs-cyan-shade-20: rgb(5.6, 123.2, 129.6);
+  --bs-cyan-tint-80: rgb(205.4, 234.8, 236.4);
+  --bs-cyan-tint-60: rgb(155.8, 214.6, 217.8);
+  --bs-cyan-tint-40: rgb(106.2, 194.4, 199.2);
+  --bs-cyan-tint-20: rgb(56.6, 174.2, 180.6);
+  --bs-cyan-rgb: 7, 154, 162;
+  --bs-cyan-tint-88: rgb(225.24, 242.88, 243.84);
+  --bs-heading-color: #333333;
+  --bs-white: #fff;
+  --bs-white-shade-80: #333333;
+  --bs-white-shade-60: #666666;
+  --bs-white-shade-40: #999999;
+  --bs-white-shade-20: #cccccc;
+  --bs-white-tint-80: white;
+  --bs-white-tint-60: white;
+  --bs-white-tint-40: white;
+  --bs-white-tint-20: white;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-white-tint-88: white;
+  --bs-heading-color: rgb(21.6, 23.4, 25);
+  --bs-gray: #6c757d;
+  --bs-gray-shade-80: rgb(21.6, 23.4, 25);
+  --bs-gray-shade-60: rgb(43.2, 46.8, 50);
+  --bs-gray-shade-40: rgb(64.8, 70.2, 75);
+  --bs-gray-shade-20: rgb(86.4, 93.6, 100);
+  --bs-gray-tint-80: rgb(225.6, 227.4, 229);
+  --bs-gray-tint-60: rgb(196.2, 199.8, 203);
+  --bs-gray-tint-40: rgb(166.8, 172.2, 177);
+  --bs-gray-tint-20: rgb(137.4, 144.6, 151);
+  --bs-gray-rgb: 108, 117, 125;
+  --bs-gray-tint-88: rgb(237.36, 238.44, 239.4);
+  --bs-heading-color: rgb(10.4, 11.6, 12.8);
+  --bs-gray-dark: #343a40;
+  --bs-gray-dark-shade-80: rgb(10.4, 11.6, 12.8);
+  --bs-gray-dark-shade-60: rgb(20.8, 23.2, 25.6);
+  --bs-gray-dark-shade-40: rgb(31.2, 34.8, 38.4);
+  --bs-gray-dark-shade-20: rgb(41.6, 46.4, 51.2);
+  --bs-gray-dark-tint-80: rgb(214.4, 215.6, 216.8);
+  --bs-gray-dark-tint-60: rgb(173.8, 176.2, 178.6);
+  --bs-gray-dark-tint-40: rgb(133.2, 136.8, 140.4);
+  --bs-gray-dark-tint-20: rgb(92.6, 97.4, 102.2);
+  --bs-gray-dark-rgb: 52, 58, 64;
+  --bs-gray-dark-tint-88: rgb(230.64, 231.36, 232.08);
+  --bs-heading-color: rgb(0, 39, 49.8);
+  --bs-primary: #00C3F9;
+  --bs-primary-shade-80: rgb(0, 39, 49.8);
+  --bs-primary-shade-60: rgb(0, 78, 99.6);
+  --bs-primary-shade-40: rgb(0, 117, 149.4);
+  --bs-primary-shade-20: rgb(0, 156, 199.2);
+  --bs-primary-tint-80: rgb(204, 243, 253.8);
+  --bs-primary-tint-60: rgb(153, 231, 252.6);
+  --bs-primary-tint-40: rgb(102, 219, 251.4);
+  --bs-primary-tint-20: rgb(51, 207, 250.2);
+  --bs-primary-rgb: 0, 195, 249;
+  --bs-primary-tint-88: rgb(224.4, 247.8, 254.28);
+  --bs-heading-color: rgb(17.4, 11.8, 51);
+  --bs-info: #573BFF;
+  --bs-info-shade-80: rgb(17.4, 11.8, 51);
+  --bs-info-shade-60: rgb(34.8, 23.6, 102);
+  --bs-info-shade-40: rgb(52.2, 35.4, 153);
+  --bs-info-shade-20: rgb(69.6, 47.2, 204);
+  --bs-info-tint-80: rgb(221.4, 215.8, 255);
+  --bs-info-tint-60: rgb(187.8, 176.6, 255);
+  --bs-info-tint-40: rgb(154.2, 137.4, 255);
+  --bs-info-tint-20: rgb(120.6, 98.2, 255);
+  --bs-info-rgb: 87, 59, 255;
+  --bs-info-tint-88: rgb(234.84, 231.48, 255);
+}
+:root .theme-color-gray {
+  --bs-heading-color: rgb(11.6, 17.4, 46.4);
+  --bs-blue: #3a57e8;
+  --bs-blue-shade-80: rgb(11.6, 17.4, 46.4);
+  --bs-blue-shade-60: rgb(23.2, 34.8, 92.8);
+  --bs-blue-shade-40: rgb(34.8, 52.2, 139.2);
+  --bs-blue-shade-20: rgb(46.4, 69.6, 185.6);
+  --bs-blue-tint-80: rgb(215.6, 221.4, 250.4);
+  --bs-blue-tint-60: rgb(176.2, 187.8, 245.8);
+  --bs-blue-tint-40: rgb(136.8, 154.2, 241.2);
+  --bs-blue-tint-20: rgb(97.4, 120.6, 236.6);
+  --bs-blue-rgb: 58, 87, 232;
+  --bs-blue-tint-88: rgb(231.36, 234.84, 252.24);
+  --bs-heading-color: rgb(20.4, 3.2, 48.4);
+  --bs-indigo: #6610f2;
+  --bs-indigo-shade-80: rgb(20.4, 3.2, 48.4);
+  --bs-indigo-shade-60: rgb(40.8, 6.4, 96.8);
+  --bs-indigo-shade-40: rgb(61.2, 9.6, 145.2);
+  --bs-indigo-shade-20: rgb(81.6, 12.8, 193.6);
+  --bs-indigo-tint-80: rgb(224.4, 207.2, 252.4);
+  --bs-indigo-tint-60: rgb(193.8, 159.4, 249.8);
+  --bs-indigo-tint-40: rgb(163.2, 111.6, 247.2);
+  --bs-indigo-tint-20: rgb(132.6, 63.8, 244.6);
+  --bs-indigo-rgb: 102, 16, 242;
+  --bs-indigo-tint-88: rgb(236.64, 226.32, 253.44);
+  --bs-heading-color: rgb(22.2, 13.2, 38.6);
+  --bs-purple: #6f42c1;
+  --bs-purple-shade-80: rgb(22.2, 13.2, 38.6);
+  --bs-purple-shade-60: rgb(44.4, 26.4, 77.2);
+  --bs-purple-shade-40: rgb(66.6, 39.6, 115.8);
+  --bs-purple-shade-20: rgb(88.8, 52.8, 154.4);
+  --bs-purple-tint-80: rgb(226.2, 217.2, 242.6);
+  --bs-purple-tint-60: rgb(197.4, 179.4, 230.2);
+  --bs-purple-tint-40: rgb(168.6, 141.6, 217.8);
+  --bs-purple-tint-20: rgb(139.8, 103.8, 205.4);
+  --bs-purple-rgb: 111, 66, 193;
+  --bs-purple-tint-88: rgb(237.72, 232.32, 247.56);
+  --bs-heading-color: rgb(42.8, 10.2, 26.4);
+  --bs-pink: #d63384;
+  --bs-pink-shade-80: rgb(42.8, 10.2, 26.4);
+  --bs-pink-shade-60: rgb(85.6, 20.4, 52.8);
+  --bs-pink-shade-40: rgb(128.4, 30.6, 79.2);
+  --bs-pink-shade-20: rgb(171.2, 40.8, 105.6);
+  --bs-pink-tint-80: rgb(246.8, 214.2, 230.4);
+  --bs-pink-tint-60: rgb(238.6, 173.4, 205.8);
+  --bs-pink-tint-40: rgb(230.4, 132.6, 181.2);
+  --bs-pink-tint-20: rgb(222.2, 91.8, 156.6);
+  --bs-pink-rgb: 214, 51, 132;
+  --bs-pink-tint-88: rgb(250.08, 230.52, 240.24);
+  --bs-heading-color: rgb(38.4, 10, 6.6);
+  --bs-red: #c03221;
+  --bs-red-shade-80: rgb(38.4, 10, 6.6);
+  --bs-red-shade-60: rgb(76.8, 20, 13.2);
+  --bs-red-shade-40: rgb(115.2, 30, 19.8);
+  --bs-red-shade-20: rgb(153.6, 40, 26.4);
+  --bs-red-tint-80: rgb(242.4, 214, 210.6);
+  --bs-red-tint-60: rgb(229.8, 173, 166.2);
+  --bs-red-tint-40: rgb(217.2, 132, 121.8);
+  --bs-red-tint-20: rgb(204.6, 91, 77.4);
+  --bs-red-rgb: 192, 50, 33;
+  --bs-red-tint-88: rgb(247.44, 230.4, 228.36);
+  --bs-heading-color: rgb(50, 33.8, 11.2);
+  --bs-orange: #FAA938;
+  --bs-orange-shade-80: rgb(50, 33.8, 11.2);
+  --bs-orange-shade-60: rgb(100, 67.6, 22.4);
+  --bs-orange-shade-40: rgb(150, 101.4, 33.6);
+  --bs-orange-shade-20: rgb(200, 135.2, 44.8);
+  --bs-orange-tint-80: rgb(254, 237.8, 215.2);
+  --bs-orange-tint-60: rgb(253, 220.6, 175.4);
+  --bs-orange-tint-40: rgb(252, 203.4, 135.6);
+  --bs-orange-tint-20: rgb(251, 186.2, 95.8);
+  --bs-orange-rgb: 250, 169, 56;
+  --bs-orange-tint-88: rgb(254.4, 244.68, 231.12);
+  --bs-heading-color: rgb(48.2, 21.2, 5.4);
+  --bs-yellow: #f16a1b;
+  --bs-yellow-shade-80: rgb(48.2, 21.2, 5.4);
+  --bs-yellow-shade-60: rgb(96.4, 42.4, 10.8);
+  --bs-yellow-shade-40: rgb(144.6, 63.6, 16.2);
+  --bs-yellow-shade-20: rgb(192.8, 84.8, 21.6);
+  --bs-yellow-tint-80: rgb(252.2, 225.2, 209.4);
+  --bs-yellow-tint-60: rgb(249.4, 195.4, 163.8);
+  --bs-yellow-tint-40: rgb(246.6, 165.6, 118.2);
+  --bs-yellow-tint-20: rgb(243.8, 135.8, 72.6);
+  --bs-yellow-rgb: 241, 106, 27;
+  --bs-yellow-tint-88: rgb(253.32, 237.12, 227.64);
+  --bs-heading-color: rgb(5.2, 32, 16.6);
+  --bs-green: #1aa053;
+  --bs-green-shade-80: rgb(5.2, 32, 16.6);
+  --bs-green-shade-60: rgb(10.4, 64, 33.2);
+  --bs-green-shade-40: rgb(15.6, 96, 49.8);
+  --bs-green-shade-20: rgb(20.8, 128, 66.4);
+  --bs-green-tint-80: rgb(209.2, 236, 220.6);
+  --bs-green-tint-60: rgb(163.4, 217, 186.2);
+  --bs-green-tint-40: rgb(117.6, 198, 151.8);
+  --bs-green-tint-20: rgb(71.8, 179, 117.4);
+  --bs-green-rgb: 26, 160, 83;
+  --bs-green-tint-88: rgb(227.52, 243.6, 234.36);
+  --bs-heading-color: rgb(6.4, 40.2, 30.2);
+  --bs-teal: #20c997;
+  --bs-teal-shade-80: rgb(6.4, 40.2, 30.2);
+  --bs-teal-shade-60: rgb(12.8, 80.4, 60.4);
+  --bs-teal-shade-40: rgb(19.2, 120.6, 90.6);
+  --bs-teal-shade-20: rgb(25.6, 160.8, 120.8);
+  --bs-teal-tint-80: rgb(210.4, 244.2, 234.2);
+  --bs-teal-tint-60: rgb(165.8, 233.4, 213.4);
+  --bs-teal-tint-40: rgb(121.2, 222.6, 192.6);
+  --bs-teal-tint-20: rgb(76.6, 211.8, 171.8);
+  --bs-teal-rgb: 32, 201, 151;
+  --bs-teal-tint-88: rgb(228.24, 248.52, 242.52);
+  --bs-heading-color: rgb(1.4, 30.8, 32.4);
+  --bs-cyan: #079aa2;
+  --bs-cyan-shade-80: rgb(1.4, 30.8, 32.4);
+  --bs-cyan-shade-60: rgb(2.8, 61.6, 64.8);
+  --bs-cyan-shade-40: rgb(4.2, 92.4, 97.2);
+  --bs-cyan-shade-20: rgb(5.6, 123.2, 129.6);
+  --bs-cyan-tint-80: rgb(205.4, 234.8, 236.4);
+  --bs-cyan-tint-60: rgb(155.8, 214.6, 217.8);
+  --bs-cyan-tint-40: rgb(106.2, 194.4, 199.2);
+  --bs-cyan-tint-20: rgb(56.6, 174.2, 180.6);
+  --bs-cyan-rgb: 7, 154, 162;
+  --bs-cyan-tint-88: rgb(225.24, 242.88, 243.84);
+  --bs-heading-color: #333333;
+  --bs-white: #fff;
+  --bs-white-shade-80: #333333;
+  --bs-white-shade-60: #666666;
+  --bs-white-shade-40: #999999;
+  --bs-white-shade-20: #cccccc;
+  --bs-white-tint-80: white;
+  --bs-white-tint-60: white;
+  --bs-white-tint-40: white;
+  --bs-white-tint-20: white;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-white-tint-88: white;
+  --bs-heading-color: rgb(21.6, 23.4, 25);
+  --bs-gray: #6c757d;
+  --bs-gray-shade-80: rgb(21.6, 23.4, 25);
+  --bs-gray-shade-60: rgb(43.2, 46.8, 50);
+  --bs-gray-shade-40: rgb(64.8, 70.2, 75);
+  --bs-gray-shade-20: rgb(86.4, 93.6, 100);
+  --bs-gray-tint-80: rgb(225.6, 227.4, 229);
+  --bs-gray-tint-60: rgb(196.2, 199.8, 203);
+  --bs-gray-tint-40: rgb(166.8, 172.2, 177);
+  --bs-gray-tint-20: rgb(137.4, 144.6, 151);
+  --bs-gray-rgb: 108, 117, 125;
+  --bs-gray-tint-88: rgb(237.36, 238.44, 239.4);
+  --bs-heading-color: rgb(10.4, 11.6, 12.8);
+  --bs-gray-dark: #343a40;
+  --bs-gray-dark-shade-80: rgb(10.4, 11.6, 12.8);
+  --bs-gray-dark-shade-60: rgb(20.8, 23.2, 25.6);
+  --bs-gray-dark-shade-40: rgb(31.2, 34.8, 38.4);
+  --bs-gray-dark-shade-20: rgb(41.6, 46.4, 51.2);
+  --bs-gray-dark-tint-80: rgb(214.4, 215.6, 216.8);
+  --bs-gray-dark-tint-60: rgb(173.8, 176.2, 178.6);
+  --bs-gray-dark-tint-40: rgb(133.2, 136.8, 140.4);
+  --bs-gray-dark-tint-20: rgb(92.6, 97.4, 102.2);
+  --bs-gray-dark-rgb: 52, 58, 64;
+  --bs-gray-dark-tint-88: rgb(230.64, 231.36, 232.08);
+  --bs-heading-color: rgb(29, 30, 31.6);
+  --bs-primary: #91969E;
+  --bs-primary-shade-80: rgb(29, 30, 31.6);
+  --bs-primary-shade-60: rgb(58, 60, 63.2);
+  --bs-primary-shade-40: rgb(87, 90, 94.8);
+  --bs-primary-shade-20: rgb(116, 120, 126.4);
+  --bs-primary-tint-80: rgb(233, 234, 235.6);
+  --bs-primary-tint-60: rgb(211, 213, 216.2);
+  --bs-primary-tint-40: rgb(189, 192, 196.8);
+  --bs-primary-tint-20: rgb(167, 171, 177.4);
+  --bs-primary-rgb: 145, 150, 158;
+  --bs-primary-tint-88: rgb(241.8, 242.4, 243.36);
+  --bs-heading-color: rgb(50.6, 28.2, 0);
+  --bs-info: #FD8D00;
+  --bs-info-shade-80: rgb(50.6, 28.2, 0);
+  --bs-info-shade-60: rgb(101.2, 56.4, 0);
+  --bs-info-shade-40: rgb(151.8, 84.6, 0);
+  --bs-info-shade-20: rgb(202.4, 112.8, 0);
+  --bs-info-tint-80: rgb(254.6, 232.2, 204);
+  --bs-info-tint-60: rgb(254.2, 209.4, 153);
+  --bs-info-tint-40: rgb(253.8, 186.6, 102);
+  --bs-info-tint-20: rgb(253.4, 163.8, 51);
+  --bs-info-rgb: 253, 141, 0;
+  --bs-info-tint-88: rgb(254.76, 241.32, 224.4);
+}
+:root .theme-color-red {
+  --bs-heading-color: rgb(11.6, 17.4, 46.4);
+  --bs-blue: #3a57e8;
+  --bs-blue-shade-80: rgb(11.6, 17.4, 46.4);
+  --bs-blue-shade-60: rgb(23.2, 34.8, 92.8);
+  --bs-blue-shade-40: rgb(34.8, 52.2, 139.2);
+  --bs-blue-shade-20: rgb(46.4, 69.6, 185.6);
+  --bs-blue-tint-80: rgb(215.6, 221.4, 250.4);
+  --bs-blue-tint-60: rgb(176.2, 187.8, 245.8);
+  --bs-blue-tint-40: rgb(136.8, 154.2, 241.2);
+  --bs-blue-tint-20: rgb(97.4, 120.6, 236.6);
+  --bs-blue-rgb: 58, 87, 232;
+  --bs-blue-tint-88: rgb(231.36, 234.84, 252.24);
+  --bs-heading-color: rgb(20.4, 3.2, 48.4);
+  --bs-indigo: #6610f2;
+  --bs-indigo-shade-80: rgb(20.4, 3.2, 48.4);
+  --bs-indigo-shade-60: rgb(40.8, 6.4, 96.8);
+  --bs-indigo-shade-40: rgb(61.2, 9.6, 145.2);
+  --bs-indigo-shade-20: rgb(81.6, 12.8, 193.6);
+  --bs-indigo-tint-80: rgb(224.4, 207.2, 252.4);
+  --bs-indigo-tint-60: rgb(193.8, 159.4, 249.8);
+  --bs-indigo-tint-40: rgb(163.2, 111.6, 247.2);
+  --bs-indigo-tint-20: rgb(132.6, 63.8, 244.6);
+  --bs-indigo-rgb: 102, 16, 242;
+  --bs-indigo-tint-88: rgb(236.64, 226.32, 253.44);
+  --bs-heading-color: rgb(22.2, 13.2, 38.6);
+  --bs-purple: #6f42c1;
+  --bs-purple-shade-80: rgb(22.2, 13.2, 38.6);
+  --bs-purple-shade-60: rgb(44.4, 26.4, 77.2);
+  --bs-purple-shade-40: rgb(66.6, 39.6, 115.8);
+  --bs-purple-shade-20: rgb(88.8, 52.8, 154.4);
+  --bs-purple-tint-80: rgb(226.2, 217.2, 242.6);
+  --bs-purple-tint-60: rgb(197.4, 179.4, 230.2);
+  --bs-purple-tint-40: rgb(168.6, 141.6, 217.8);
+  --bs-purple-tint-20: rgb(139.8, 103.8, 205.4);
+  --bs-purple-rgb: 111, 66, 193;
+  --bs-purple-tint-88: rgb(237.72, 232.32, 247.56);
+  --bs-heading-color: rgb(42.8, 10.2, 26.4);
+  --bs-pink: #d63384;
+  --bs-pink-shade-80: rgb(42.8, 10.2, 26.4);
+  --bs-pink-shade-60: rgb(85.6, 20.4, 52.8);
+  --bs-pink-shade-40: rgb(128.4, 30.6, 79.2);
+  --bs-pink-shade-20: rgb(171.2, 40.8, 105.6);
+  --bs-pink-tint-80: rgb(246.8, 214.2, 230.4);
+  --bs-pink-tint-60: rgb(238.6, 173.4, 205.8);
+  --bs-pink-tint-40: rgb(230.4, 132.6, 181.2);
+  --bs-pink-tint-20: rgb(222.2, 91.8, 156.6);
+  --bs-pink-rgb: 214, 51, 132;
+  --bs-pink-tint-88: rgb(250.08, 230.52, 240.24);
+  --bs-heading-color: rgb(38.4, 10, 6.6);
+  --bs-red: #c03221;
+  --bs-red-shade-80: rgb(38.4, 10, 6.6);
+  --bs-red-shade-60: rgb(76.8, 20, 13.2);
+  --bs-red-shade-40: rgb(115.2, 30, 19.8);
+  --bs-red-shade-20: rgb(153.6, 40, 26.4);
+  --bs-red-tint-80: rgb(242.4, 214, 210.6);
+  --bs-red-tint-60: rgb(229.8, 173, 166.2);
+  --bs-red-tint-40: rgb(217.2, 132, 121.8);
+  --bs-red-tint-20: rgb(204.6, 91, 77.4);
+  --bs-red-rgb: 192, 50, 33;
+  --bs-red-tint-88: rgb(247.44, 230.4, 228.36);
+  --bs-heading-color: rgb(50, 33.8, 11.2);
+  --bs-orange: #FAA938;
+  --bs-orange-shade-80: rgb(50, 33.8, 11.2);
+  --bs-orange-shade-60: rgb(100, 67.6, 22.4);
+  --bs-orange-shade-40: rgb(150, 101.4, 33.6);
+  --bs-orange-shade-20: rgb(200, 135.2, 44.8);
+  --bs-orange-tint-80: rgb(254, 237.8, 215.2);
+  --bs-orange-tint-60: rgb(253, 220.6, 175.4);
+  --bs-orange-tint-40: rgb(252, 203.4, 135.6);
+  --bs-orange-tint-20: rgb(251, 186.2, 95.8);
+  --bs-orange-rgb: 250, 169, 56;
+  --bs-orange-tint-88: rgb(254.4, 244.68, 231.12);
+  --bs-heading-color: rgb(48.2, 21.2, 5.4);
+  --bs-yellow: #f16a1b;
+  --bs-yellow-shade-80: rgb(48.2, 21.2, 5.4);
+  --bs-yellow-shade-60: rgb(96.4, 42.4, 10.8);
+  --bs-yellow-shade-40: rgb(144.6, 63.6, 16.2);
+  --bs-yellow-shade-20: rgb(192.8, 84.8, 21.6);
+  --bs-yellow-tint-80: rgb(252.2, 225.2, 209.4);
+  --bs-yellow-tint-60: rgb(249.4, 195.4, 163.8);
+  --bs-yellow-tint-40: rgb(246.6, 165.6, 118.2);
+  --bs-yellow-tint-20: rgb(243.8, 135.8, 72.6);
+  --bs-yellow-rgb: 241, 106, 27;
+  --bs-yellow-tint-88: rgb(253.32, 237.12, 227.64);
+  --bs-heading-color: rgb(5.2, 32, 16.6);
+  --bs-green: #1aa053;
+  --bs-green-shade-80: rgb(5.2, 32, 16.6);
+  --bs-green-shade-60: rgb(10.4, 64, 33.2);
+  --bs-green-shade-40: rgb(15.6, 96, 49.8);
+  --bs-green-shade-20: rgb(20.8, 128, 66.4);
+  --bs-green-tint-80: rgb(209.2, 236, 220.6);
+  --bs-green-tint-60: rgb(163.4, 217, 186.2);
+  --bs-green-tint-40: rgb(117.6, 198, 151.8);
+  --bs-green-tint-20: rgb(71.8, 179, 117.4);
+  --bs-green-rgb: 26, 160, 83;
+  --bs-green-tint-88: rgb(227.52, 243.6, 234.36);
+  --bs-heading-color: rgb(6.4, 40.2, 30.2);
+  --bs-teal: #20c997;
+  --bs-teal-shade-80: rgb(6.4, 40.2, 30.2);
+  --bs-teal-shade-60: rgb(12.8, 80.4, 60.4);
+  --bs-teal-shade-40: rgb(19.2, 120.6, 90.6);
+  --bs-teal-shade-20: rgb(25.6, 160.8, 120.8);
+  --bs-teal-tint-80: rgb(210.4, 244.2, 234.2);
+  --bs-teal-tint-60: rgb(165.8, 233.4, 213.4);
+  --bs-teal-tint-40: rgb(121.2, 222.6, 192.6);
+  --bs-teal-tint-20: rgb(76.6, 211.8, 171.8);
+  --bs-teal-rgb: 32, 201, 151;
+  --bs-teal-tint-88: rgb(228.24, 248.52, 242.52);
+  --bs-heading-color: rgb(1.4, 30.8, 32.4);
+  --bs-cyan: #079aa2;
+  --bs-cyan-shade-80: rgb(1.4, 30.8, 32.4);
+  --bs-cyan-shade-60: rgb(2.8, 61.6, 64.8);
+  --bs-cyan-shade-40: rgb(4.2, 92.4, 97.2);
+  --bs-cyan-shade-20: rgb(5.6, 123.2, 129.6);
+  --bs-cyan-tint-80: rgb(205.4, 234.8, 236.4);
+  --bs-cyan-tint-60: rgb(155.8, 214.6, 217.8);
+  --bs-cyan-tint-40: rgb(106.2, 194.4, 199.2);
+  --bs-cyan-tint-20: rgb(56.6, 174.2, 180.6);
+  --bs-cyan-rgb: 7, 154, 162;
+  --bs-cyan-tint-88: rgb(225.24, 242.88, 243.84);
+  --bs-heading-color: #333333;
+  --bs-white: #fff;
+  --bs-white-shade-80: #333333;
+  --bs-white-shade-60: #666666;
+  --bs-white-shade-40: #999999;
+  --bs-white-shade-20: #cccccc;
+  --bs-white-tint-80: white;
+  --bs-white-tint-60: white;
+  --bs-white-tint-40: white;
+  --bs-white-tint-20: white;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-white-tint-88: white;
+  --bs-heading-color: rgb(21.6, 23.4, 25);
+  --bs-gray: #6c757d;
+  --bs-gray-shade-80: rgb(21.6, 23.4, 25);
+  --bs-gray-shade-60: rgb(43.2, 46.8, 50);
+  --bs-gray-shade-40: rgb(64.8, 70.2, 75);
+  --bs-gray-shade-20: rgb(86.4, 93.6, 100);
+  --bs-gray-tint-80: rgb(225.6, 227.4, 229);
+  --bs-gray-tint-60: rgb(196.2, 199.8, 203);
+  --bs-gray-tint-40: rgb(166.8, 172.2, 177);
+  --bs-gray-tint-20: rgb(137.4, 144.6, 151);
+  --bs-gray-rgb: 108, 117, 125;
+  --bs-gray-tint-88: rgb(237.36, 238.44, 239.4);
+  --bs-heading-color: rgb(10.4, 11.6, 12.8);
+  --bs-gray-dark: #343a40;
+  --bs-gray-dark-shade-80: rgb(10.4, 11.6, 12.8);
+  --bs-gray-dark-shade-60: rgb(20.8, 23.2, 25.6);
+  --bs-gray-dark-shade-40: rgb(31.2, 34.8, 38.4);
+  --bs-gray-dark-shade-20: rgb(41.6, 46.4, 51.2);
+  --bs-gray-dark-tint-80: rgb(214.4, 215.6, 216.8);
+  --bs-gray-dark-tint-60: rgb(173.8, 176.2, 178.6);
+  --bs-gray-dark-tint-40: rgb(133.2, 136.8, 140.4);
+  --bs-gray-dark-tint-20: rgb(92.6, 97.4, 102.2);
+  --bs-gray-dark-rgb: 52, 58, 64;
+  --bs-gray-dark-tint-88: rgb(230.64, 231.36, 232.08);
+  --bs-heading-color: rgb(43.8, 16.6, 19.8);
+  --bs-primary: #DB5363;
+  --bs-primary-shade-80: rgb(43.8, 16.6, 19.8);
+  --bs-primary-shade-60: rgb(87.6, 33.2, 39.6);
+  --bs-primary-shade-40: rgb(131.4, 49.8, 59.4);
+  --bs-primary-shade-20: rgb(175.2, 66.4, 79.2);
+  --bs-primary-tint-80: rgb(247.8, 220.6, 223.8);
+  --bs-primary-tint-60: rgb(240.6, 186.2, 192.6);
+  --bs-primary-tint-40: rgb(233.4, 151.8, 161.4);
+  --bs-primary-tint-20: rgb(226.2, 117.4, 130.2);
+  --bs-primary-rgb: 219, 83, 99;
+  --bs-primary-tint-88: rgb(250.68, 234.36, 236.28);
+  --bs-heading-color: rgb(10.8, 21.2, 48);
+  --bs-info: #366AF0;
+  --bs-info-shade-80: rgb(10.8, 21.2, 48);
+  --bs-info-shade-60: rgb(21.6, 42.4, 96);
+  --bs-info-shade-40: rgb(32.4, 63.6, 144);
+  --bs-info-shade-20: rgb(43.2, 84.8, 192);
+  --bs-info-tint-80: rgb(214.8, 225.2, 252);
+  --bs-info-tint-60: rgb(174.6, 195.4, 249);
+  --bs-info-tint-40: rgb(134.4, 165.6, 246);
+  --bs-info-tint-20: rgb(94.2, 135.8, 243);
+  --bs-info-rgb: 54, 106, 240;
+  --bs-info-tint-88: rgb(230.88, 237.12, 253.2);
+}
+:root .theme-color-yellow {
+  --bs-heading-color: rgb(11.6, 17.4, 46.4);
+  --bs-blue: #3a57e8;
+  --bs-blue-shade-80: rgb(11.6, 17.4, 46.4);
+  --bs-blue-shade-60: rgb(23.2, 34.8, 92.8);
+  --bs-blue-shade-40: rgb(34.8, 52.2, 139.2);
+  --bs-blue-shade-20: rgb(46.4, 69.6, 185.6);
+  --bs-blue-tint-80: rgb(215.6, 221.4, 250.4);
+  --bs-blue-tint-60: rgb(176.2, 187.8, 245.8);
+  --bs-blue-tint-40: rgb(136.8, 154.2, 241.2);
+  --bs-blue-tint-20: rgb(97.4, 120.6, 236.6);
+  --bs-blue-rgb: 58, 87, 232;
+  --bs-blue-tint-88: rgb(231.36, 234.84, 252.24);
+  --bs-heading-color: rgb(20.4, 3.2, 48.4);
+  --bs-indigo: #6610f2;
+  --bs-indigo-shade-80: rgb(20.4, 3.2, 48.4);
+  --bs-indigo-shade-60: rgb(40.8, 6.4, 96.8);
+  --bs-indigo-shade-40: rgb(61.2, 9.6, 145.2);
+  --bs-indigo-shade-20: rgb(81.6, 12.8, 193.6);
+  --bs-indigo-tint-80: rgb(224.4, 207.2, 252.4);
+  --bs-indigo-tint-60: rgb(193.8, 159.4, 249.8);
+  --bs-indigo-tint-40: rgb(163.2, 111.6, 247.2);
+  --bs-indigo-tint-20: rgb(132.6, 63.8, 244.6);
+  --bs-indigo-rgb: 102, 16, 242;
+  --bs-indigo-tint-88: rgb(236.64, 226.32, 253.44);
+  --bs-heading-color: rgb(22.2, 13.2, 38.6);
+  --bs-purple: #6f42c1;
+  --bs-purple-shade-80: rgb(22.2, 13.2, 38.6);
+  --bs-purple-shade-60: rgb(44.4, 26.4, 77.2);
+  --bs-purple-shade-40: rgb(66.6, 39.6, 115.8);
+  --bs-purple-shade-20: rgb(88.8, 52.8, 154.4);
+  --bs-purple-tint-80: rgb(226.2, 217.2, 242.6);
+  --bs-purple-tint-60: rgb(197.4, 179.4, 230.2);
+  --bs-purple-tint-40: rgb(168.6, 141.6, 217.8);
+  --bs-purple-tint-20: rgb(139.8, 103.8, 205.4);
+  --bs-purple-rgb: 111, 66, 193;
+  --bs-purple-tint-88: rgb(237.72, 232.32, 247.56);
+  --bs-heading-color: rgb(42.8, 10.2, 26.4);
+  --bs-pink: #d63384;
+  --bs-pink-shade-80: rgb(42.8, 10.2, 26.4);
+  --bs-pink-shade-60: rgb(85.6, 20.4, 52.8);
+  --bs-pink-shade-40: rgb(128.4, 30.6, 79.2);
+  --bs-pink-shade-20: rgb(171.2, 40.8, 105.6);
+  --bs-pink-tint-80: rgb(246.8, 214.2, 230.4);
+  --bs-pink-tint-60: rgb(238.6, 173.4, 205.8);
+  --bs-pink-tint-40: rgb(230.4, 132.6, 181.2);
+  --bs-pink-tint-20: rgb(222.2, 91.8, 156.6);
+  --bs-pink-rgb: 214, 51, 132;
+  --bs-pink-tint-88: rgb(250.08, 230.52, 240.24);
+  --bs-heading-color: rgb(38.4, 10, 6.6);
+  --bs-red: #c03221;
+  --bs-red-shade-80: rgb(38.4, 10, 6.6);
+  --bs-red-shade-60: rgb(76.8, 20, 13.2);
+  --bs-red-shade-40: rgb(115.2, 30, 19.8);
+  --bs-red-shade-20: rgb(153.6, 40, 26.4);
+  --bs-red-tint-80: rgb(242.4, 214, 210.6);
+  --bs-red-tint-60: rgb(229.8, 173, 166.2);
+  --bs-red-tint-40: rgb(217.2, 132, 121.8);
+  --bs-red-tint-20: rgb(204.6, 91, 77.4);
+  --bs-red-rgb: 192, 50, 33;
+  --bs-red-tint-88: rgb(247.44, 230.4, 228.36);
+  --bs-heading-color: rgb(50, 33.8, 11.2);
+  --bs-orange: #FAA938;
+  --bs-orange-shade-80: rgb(50, 33.8, 11.2);
+  --bs-orange-shade-60: rgb(100, 67.6, 22.4);
+  --bs-orange-shade-40: rgb(150, 101.4, 33.6);
+  --bs-orange-shade-20: rgb(200, 135.2, 44.8);
+  --bs-orange-tint-80: rgb(254, 237.8, 215.2);
+  --bs-orange-tint-60: rgb(253, 220.6, 175.4);
+  --bs-orange-tint-40: rgb(252, 203.4, 135.6);
+  --bs-orange-tint-20: rgb(251, 186.2, 95.8);
+  --bs-orange-rgb: 250, 169, 56;
+  --bs-orange-tint-88: rgb(254.4, 244.68, 231.12);
+  --bs-heading-color: rgb(48.2, 21.2, 5.4);
+  --bs-yellow: #f16a1b;
+  --bs-yellow-shade-80: rgb(48.2, 21.2, 5.4);
+  --bs-yellow-shade-60: rgb(96.4, 42.4, 10.8);
+  --bs-yellow-shade-40: rgb(144.6, 63.6, 16.2);
+  --bs-yellow-shade-20: rgb(192.8, 84.8, 21.6);
+  --bs-yellow-tint-80: rgb(252.2, 225.2, 209.4);
+  --bs-yellow-tint-60: rgb(249.4, 195.4, 163.8);
+  --bs-yellow-tint-40: rgb(246.6, 165.6, 118.2);
+  --bs-yellow-tint-20: rgb(243.8, 135.8, 72.6);
+  --bs-yellow-rgb: 241, 106, 27;
+  --bs-yellow-tint-88: rgb(253.32, 237.12, 227.64);
+  --bs-heading-color: rgb(5.2, 32, 16.6);
+  --bs-green: #1aa053;
+  --bs-green-shade-80: rgb(5.2, 32, 16.6);
+  --bs-green-shade-60: rgb(10.4, 64, 33.2);
+  --bs-green-shade-40: rgb(15.6, 96, 49.8);
+  --bs-green-shade-20: rgb(20.8, 128, 66.4);
+  --bs-green-tint-80: rgb(209.2, 236, 220.6);
+  --bs-green-tint-60: rgb(163.4, 217, 186.2);
+  --bs-green-tint-40: rgb(117.6, 198, 151.8);
+  --bs-green-tint-20: rgb(71.8, 179, 117.4);
+  --bs-green-rgb: 26, 160, 83;
+  --bs-green-tint-88: rgb(227.52, 243.6, 234.36);
+  --bs-heading-color: rgb(6.4, 40.2, 30.2);
+  --bs-teal: #20c997;
+  --bs-teal-shade-80: rgb(6.4, 40.2, 30.2);
+  --bs-teal-shade-60: rgb(12.8, 80.4, 60.4);
+  --bs-teal-shade-40: rgb(19.2, 120.6, 90.6);
+  --bs-teal-shade-20: rgb(25.6, 160.8, 120.8);
+  --bs-teal-tint-80: rgb(210.4, 244.2, 234.2);
+  --bs-teal-tint-60: rgb(165.8, 233.4, 213.4);
+  --bs-teal-tint-40: rgb(121.2, 222.6, 192.6);
+  --bs-teal-tint-20: rgb(76.6, 211.8, 171.8);
+  --bs-teal-rgb: 32, 201, 151;
+  --bs-teal-tint-88: rgb(228.24, 248.52, 242.52);
+  --bs-heading-color: rgb(1.4, 30.8, 32.4);
+  --bs-cyan: #079aa2;
+  --bs-cyan-shade-80: rgb(1.4, 30.8, 32.4);
+  --bs-cyan-shade-60: rgb(2.8, 61.6, 64.8);
+  --bs-cyan-shade-40: rgb(4.2, 92.4, 97.2);
+  --bs-cyan-shade-20: rgb(5.6, 123.2, 129.6);
+  --bs-cyan-tint-80: rgb(205.4, 234.8, 236.4);
+  --bs-cyan-tint-60: rgb(155.8, 214.6, 217.8);
+  --bs-cyan-tint-40: rgb(106.2, 194.4, 199.2);
+  --bs-cyan-tint-20: rgb(56.6, 174.2, 180.6);
+  --bs-cyan-rgb: 7, 154, 162;
+  --bs-cyan-tint-88: rgb(225.24, 242.88, 243.84);
+  --bs-heading-color: #333333;
+  --bs-white: #fff;
+  --bs-white-shade-80: #333333;
+  --bs-white-shade-60: #666666;
+  --bs-white-shade-40: #999999;
+  --bs-white-shade-20: #cccccc;
+  --bs-white-tint-80: white;
+  --bs-white-tint-60: white;
+  --bs-white-tint-40: white;
+  --bs-white-tint-20: white;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-white-tint-88: white;
+  --bs-heading-color: rgb(21.6, 23.4, 25);
+  --bs-gray: #6c757d;
+  --bs-gray-shade-80: rgb(21.6, 23.4, 25);
+  --bs-gray-shade-60: rgb(43.2, 46.8, 50);
+  --bs-gray-shade-40: rgb(64.8, 70.2, 75);
+  --bs-gray-shade-20: rgb(86.4, 93.6, 100);
+  --bs-gray-tint-80: rgb(225.6, 227.4, 229);
+  --bs-gray-tint-60: rgb(196.2, 199.8, 203);
+  --bs-gray-tint-40: rgb(166.8, 172.2, 177);
+  --bs-gray-tint-20: rgb(137.4, 144.6, 151);
+  --bs-gray-rgb: 108, 117, 125;
+  --bs-gray-tint-88: rgb(237.36, 238.44, 239.4);
+  --bs-heading-color: rgb(10.4, 11.6, 12.8);
+  --bs-gray-dark: #343a40;
+  --bs-gray-dark-shade-80: rgb(10.4, 11.6, 12.8);
+  --bs-gray-dark-shade-60: rgb(20.8, 23.2, 25.6);
+  --bs-gray-dark-shade-40: rgb(31.2, 34.8, 38.4);
+  --bs-gray-dark-shade-20: rgb(41.6, 46.4, 51.2);
+  --bs-gray-dark-tint-80: rgb(214.4, 215.6, 216.8);
+  --bs-gray-dark-tint-60: rgb(173.8, 176.2, 178.6);
+  --bs-gray-dark-tint-40: rgb(133.2, 136.8, 140.4);
+  --bs-gray-dark-tint-20: rgb(92.6, 97.4, 102.2);
+  --bs-gray-dark-rgb: 52, 58, 64;
+  --bs-gray-dark-tint-88: rgb(230.64, 231.36, 232.08);
+  --bs-heading-color: rgb(46.8, 21.2, 3.6);
+  --bs-primary: #EA6A12;
+  --bs-primary-shade-80: rgb(46.8, 21.2, 3.6);
+  --bs-primary-shade-60: rgb(93.6, 42.4, 7.2);
+  --bs-primary-shade-40: rgb(140.4, 63.6, 10.8);
+  --bs-primary-shade-20: rgb(187.2, 84.8, 14.4);
+  --bs-primary-tint-80: rgb(250.8, 225.2, 207.6);
+  --bs-primary-tint-60: rgb(246.6, 195.4, 160.2);
+  --bs-primary-tint-40: rgb(242.4, 165.6, 112.8);
+  --bs-primary-tint-20: rgb(238.2, 135.8, 65.4);
+  --bs-primary-rgb: 234, 106, 18;
+  --bs-primary-tint-88: rgb(252.48, 237.12, 226.56);
+  --bs-heading-color: rgb(20, 3.2, 48.2);
+  --bs-info: #6410F1;
+  --bs-info-shade-80: rgb(20, 3.2, 48.2);
+  --bs-info-shade-60: rgb(40, 6.4, 96.4);
+  --bs-info-shade-40: rgb(60, 9.6, 144.6);
+  --bs-info-shade-20: rgb(80, 12.8, 192.8);
+  --bs-info-tint-80: rgb(224, 207.2, 252.2);
+  --bs-info-tint-60: rgb(193, 159.4, 249.4);
+  --bs-info-tint-40: rgb(162, 111.6, 246.6);
+  --bs-info-tint-20: rgb(131, 63.8, 243.8);
+  --bs-info-rgb: 100, 16, 241;
+  --bs-info-tint-88: rgb(236.4, 226.32, 253.32);
+}
+:root .theme-color-pink {
+  --bs-heading-color: rgb(11.6, 17.4, 46.4);
+  --bs-blue: #3a57e8;
+  --bs-blue-shade-80: rgb(11.6, 17.4, 46.4);
+  --bs-blue-shade-60: rgb(23.2, 34.8, 92.8);
+  --bs-blue-shade-40: rgb(34.8, 52.2, 139.2);
+  --bs-blue-shade-20: rgb(46.4, 69.6, 185.6);
+  --bs-blue-tint-80: rgb(215.6, 221.4, 250.4);
+  --bs-blue-tint-60: rgb(176.2, 187.8, 245.8);
+  --bs-blue-tint-40: rgb(136.8, 154.2, 241.2);
+  --bs-blue-tint-20: rgb(97.4, 120.6, 236.6);
+  --bs-blue-rgb: 58, 87, 232;
+  --bs-blue-tint-88: rgb(231.36, 234.84, 252.24);
+  --bs-heading-color: rgb(20.4, 3.2, 48.4);
+  --bs-indigo: #6610f2;
+  --bs-indigo-shade-80: rgb(20.4, 3.2, 48.4);
+  --bs-indigo-shade-60: rgb(40.8, 6.4, 96.8);
+  --bs-indigo-shade-40: rgb(61.2, 9.6, 145.2);
+  --bs-indigo-shade-20: rgb(81.6, 12.8, 193.6);
+  --bs-indigo-tint-80: rgb(224.4, 207.2, 252.4);
+  --bs-indigo-tint-60: rgb(193.8, 159.4, 249.8);
+  --bs-indigo-tint-40: rgb(163.2, 111.6, 247.2);
+  --bs-indigo-tint-20: rgb(132.6, 63.8, 244.6);
+  --bs-indigo-rgb: 102, 16, 242;
+  --bs-indigo-tint-88: rgb(236.64, 226.32, 253.44);
+  --bs-heading-color: rgb(22.2, 13.2, 38.6);
+  --bs-purple: #6f42c1;
+  --bs-purple-shade-80: rgb(22.2, 13.2, 38.6);
+  --bs-purple-shade-60: rgb(44.4, 26.4, 77.2);
+  --bs-purple-shade-40: rgb(66.6, 39.6, 115.8);
+  --bs-purple-shade-20: rgb(88.8, 52.8, 154.4);
+  --bs-purple-tint-80: rgb(226.2, 217.2, 242.6);
+  --bs-purple-tint-60: rgb(197.4, 179.4, 230.2);
+  --bs-purple-tint-40: rgb(168.6, 141.6, 217.8);
+  --bs-purple-tint-20: rgb(139.8, 103.8, 205.4);
+  --bs-purple-rgb: 111, 66, 193;
+  --bs-purple-tint-88: rgb(237.72, 232.32, 247.56);
+  --bs-heading-color: rgb(42.8, 10.2, 26.4);
+  --bs-pink: #d63384;
+  --bs-pink-shade-80: rgb(42.8, 10.2, 26.4);
+  --bs-pink-shade-60: rgb(85.6, 20.4, 52.8);
+  --bs-pink-shade-40: rgb(128.4, 30.6, 79.2);
+  --bs-pink-shade-20: rgb(171.2, 40.8, 105.6);
+  --bs-pink-tint-80: rgb(246.8, 214.2, 230.4);
+  --bs-pink-tint-60: rgb(238.6, 173.4, 205.8);
+  --bs-pink-tint-40: rgb(230.4, 132.6, 181.2);
+  --bs-pink-tint-20: rgb(222.2, 91.8, 156.6);
+  --bs-pink-rgb: 214, 51, 132;
+  --bs-pink-tint-88: rgb(250.08, 230.52, 240.24);
+  --bs-heading-color: rgb(38.4, 10, 6.6);
+  --bs-red: #c03221;
+  --bs-red-shade-80: rgb(38.4, 10, 6.6);
+  --bs-red-shade-60: rgb(76.8, 20, 13.2);
+  --bs-red-shade-40: rgb(115.2, 30, 19.8);
+  --bs-red-shade-20: rgb(153.6, 40, 26.4);
+  --bs-red-tint-80: rgb(242.4, 214, 210.6);
+  --bs-red-tint-60: rgb(229.8, 173, 166.2);
+  --bs-red-tint-40: rgb(217.2, 132, 121.8);
+  --bs-red-tint-20: rgb(204.6, 91, 77.4);
+  --bs-red-rgb: 192, 50, 33;
+  --bs-red-tint-88: rgb(247.44, 230.4, 228.36);
+  --bs-heading-color: rgb(50, 33.8, 11.2);
+  --bs-orange: #FAA938;
+  --bs-orange-shade-80: rgb(50, 33.8, 11.2);
+  --bs-orange-shade-60: rgb(100, 67.6, 22.4);
+  --bs-orange-shade-40: rgb(150, 101.4, 33.6);
+  --bs-orange-shade-20: rgb(200, 135.2, 44.8);
+  --bs-orange-tint-80: rgb(254, 237.8, 215.2);
+  --bs-orange-tint-60: rgb(253, 220.6, 175.4);
+  --bs-orange-tint-40: rgb(252, 203.4, 135.6);
+  --bs-orange-tint-20: rgb(251, 186.2, 95.8);
+  --bs-orange-rgb: 250, 169, 56;
+  --bs-orange-tint-88: rgb(254.4, 244.68, 231.12);
+  --bs-heading-color: rgb(48.2, 21.2, 5.4);
+  --bs-yellow: #f16a1b;
+  --bs-yellow-shade-80: rgb(48.2, 21.2, 5.4);
+  --bs-yellow-shade-60: rgb(96.4, 42.4, 10.8);
+  --bs-yellow-shade-40: rgb(144.6, 63.6, 16.2);
+  --bs-yellow-shade-20: rgb(192.8, 84.8, 21.6);
+  --bs-yellow-tint-80: rgb(252.2, 225.2, 209.4);
+  --bs-yellow-tint-60: rgb(249.4, 195.4, 163.8);
+  --bs-yellow-tint-40: rgb(246.6, 165.6, 118.2);
+  --bs-yellow-tint-20: rgb(243.8, 135.8, 72.6);
+  --bs-yellow-rgb: 241, 106, 27;
+  --bs-yellow-tint-88: rgb(253.32, 237.12, 227.64);
+  --bs-heading-color: rgb(5.2, 32, 16.6);
+  --bs-green: #1aa053;
+  --bs-green-shade-80: rgb(5.2, 32, 16.6);
+  --bs-green-shade-60: rgb(10.4, 64, 33.2);
+  --bs-green-shade-40: rgb(15.6, 96, 49.8);
+  --bs-green-shade-20: rgb(20.8, 128, 66.4);
+  --bs-green-tint-80: rgb(209.2, 236, 220.6);
+  --bs-green-tint-60: rgb(163.4, 217, 186.2);
+  --bs-green-tint-40: rgb(117.6, 198, 151.8);
+  --bs-green-tint-20: rgb(71.8, 179, 117.4);
+  --bs-green-rgb: 26, 160, 83;
+  --bs-green-tint-88: rgb(227.52, 243.6, 234.36);
+  --bs-heading-color: rgb(6.4, 40.2, 30.2);
+  --bs-teal: #20c997;
+  --bs-teal-shade-80: rgb(6.4, 40.2, 30.2);
+  --bs-teal-shade-60: rgb(12.8, 80.4, 60.4);
+  --bs-teal-shade-40: rgb(19.2, 120.6, 90.6);
+  --bs-teal-shade-20: rgb(25.6, 160.8, 120.8);
+  --bs-teal-tint-80: rgb(210.4, 244.2, 234.2);
+  --bs-teal-tint-60: rgb(165.8, 233.4, 213.4);
+  --bs-teal-tint-40: rgb(121.2, 222.6, 192.6);
+  --bs-teal-tint-20: rgb(76.6, 211.8, 171.8);
+  --bs-teal-rgb: 32, 201, 151;
+  --bs-teal-tint-88: rgb(228.24, 248.52, 242.52);
+  --bs-heading-color: rgb(1.4, 30.8, 32.4);
+  --bs-cyan: #079aa2;
+  --bs-cyan-shade-80: rgb(1.4, 30.8, 32.4);
+  --bs-cyan-shade-60: rgb(2.8, 61.6, 64.8);
+  --bs-cyan-shade-40: rgb(4.2, 92.4, 97.2);
+  --bs-cyan-shade-20: rgb(5.6, 123.2, 129.6);
+  --bs-cyan-tint-80: rgb(205.4, 234.8, 236.4);
+  --bs-cyan-tint-60: rgb(155.8, 214.6, 217.8);
+  --bs-cyan-tint-40: rgb(106.2, 194.4, 199.2);
+  --bs-cyan-tint-20: rgb(56.6, 174.2, 180.6);
+  --bs-cyan-rgb: 7, 154, 162;
+  --bs-cyan-tint-88: rgb(225.24, 242.88, 243.84);
+  --bs-heading-color: #333333;
+  --bs-white: #fff;
+  --bs-white-shade-80: #333333;
+  --bs-white-shade-60: #666666;
+  --bs-white-shade-40: #999999;
+  --bs-white-shade-20: #cccccc;
+  --bs-white-tint-80: white;
+  --bs-white-tint-60: white;
+  --bs-white-tint-40: white;
+  --bs-white-tint-20: white;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-white-tint-88: white;
+  --bs-heading-color: rgb(21.6, 23.4, 25);
+  --bs-gray: #6c757d;
+  --bs-gray-shade-80: rgb(21.6, 23.4, 25);
+  --bs-gray-shade-60: rgb(43.2, 46.8, 50);
+  --bs-gray-shade-40: rgb(64.8, 70.2, 75);
+  --bs-gray-shade-20: rgb(86.4, 93.6, 100);
+  --bs-gray-tint-80: rgb(225.6, 227.4, 229);
+  --bs-gray-tint-60: rgb(196.2, 199.8, 203);
+  --bs-gray-tint-40: rgb(166.8, 172.2, 177);
+  --bs-gray-tint-20: rgb(137.4, 144.6, 151);
+  --bs-gray-rgb: 108, 117, 125;
+  --bs-gray-tint-88: rgb(237.36, 238.44, 239.4);
+  --bs-heading-color: rgb(10.4, 11.6, 12.8);
+  --bs-gray-dark: #343a40;
+  --bs-gray-dark-shade-80: rgb(10.4, 11.6, 12.8);
+  --bs-gray-dark-shade-60: rgb(20.8, 23.2, 25.6);
+  --bs-gray-dark-shade-40: rgb(31.2, 34.8, 38.4);
+  --bs-gray-dark-shade-20: rgb(41.6, 46.4, 51.2);
+  --bs-gray-dark-tint-80: rgb(214.4, 215.6, 216.8);
+  --bs-gray-dark-tint-60: rgb(173.8, 176.2, 178.6);
+  --bs-gray-dark-tint-40: rgb(133.2, 136.8, 140.4);
+  --bs-gray-dark-tint-20: rgb(92.6, 97.4, 102.2);
+  --bs-gray-dark-rgb: 52, 58, 64;
+  --bs-gray-dark-tint-88: rgb(230.64, 231.36, 232.08);
+  --bs-heading-color: rgb(45.8, 26.8, 35.8);
+  --bs-primary: #E586B3;
+  --bs-primary-shade-80: rgb(45.8, 26.8, 35.8);
+  --bs-primary-shade-60: rgb(91.6, 53.6, 71.6);
+  --bs-primary-shade-40: rgb(137.4, 80.4, 107.4);
+  --bs-primary-shade-20: rgb(183.2, 107.2, 143.2);
+  --bs-primary-tint-80: rgb(249.8, 230.8, 239.8);
+  --bs-primary-tint-60: rgb(244.6, 206.6, 224.6);
+  --bs-primary-tint-40: rgb(239.4, 182.4, 209.4);
+  --bs-primary-tint-20: rgb(234.2, 158.2, 194.2);
+  --bs-primary-rgb: 229, 134, 179;
+  --bs-primary-tint-88: rgb(251.88, 240.48, 245.88);
+  --bs-heading-color: rgb(7.4, 39.8, 30.6);
+  --bs-info: #25C799;
+  --bs-info-shade-80: rgb(7.4, 39.8, 30.6);
+  --bs-info-shade-60: rgb(14.8, 79.6, 61.2);
+  --bs-info-shade-40: rgb(22.2, 119.4, 91.8);
+  --bs-info-shade-20: rgb(29.6, 159.2, 122.4);
+  --bs-info-tint-80: rgb(211.4, 243.8, 234.6);
+  --bs-info-tint-60: rgb(167.8, 232.6, 214.2);
+  --bs-info-tint-40: rgb(124.2, 221.4, 193.8);
+  --bs-info-tint-20: rgb(80.6, 210.2, 173.4);
+  --bs-info-rgb: 37, 199, 153;
+  --bs-info-tint-88: rgb(228.84, 248.28, 242.76);
+}
+
+.theme-color-blue .form-check-input:checked[type=checkbox] {
+  background-color: theme-color-blue;
+}
+.theme-color-blue .form-switch .form-check-input {
+  padding: 0.5rem;
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+  transition: all 300ms ease;
+}
+.theme-color-blue .form-switch .form-check-input:checked {
+  background-color: var(--bs-primary-tint-80);
+  border-color: var(--bs-primary-tint-80);
+  transition: all 300ms ease;
+}
+.theme-color-gray .form-check-input:checked[type=checkbox] {
+  background-color: theme-color-gray;
+}
+.theme-color-gray .form-switch .form-check-input {
+  padding: 0.5rem;
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+  transition: all 300ms ease;
+}
+.theme-color-gray .form-switch .form-check-input:checked {
+  background-color: var(--bs-primary-tint-80);
+  border-color: var(--bs-primary-tint-80);
+  transition: all 300ms ease;
+}
+.theme-color-red .form-check-input:checked[type=checkbox] {
+  background-color: theme-color-red;
+}
+.theme-color-red .form-switch .form-check-input {
+  padding: 0.5rem;
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+  transition: all 300ms ease;
+}
+.theme-color-red .form-switch .form-check-input:checked {
+  background-color: var(--bs-primary-tint-80);
+  border-color: var(--bs-primary-tint-80);
+  transition: all 300ms ease;
+}
+.theme-color-yellow .form-check-input:checked[type=checkbox] {
+  background-color: theme-color-yellow;
+}
+.theme-color-yellow .form-switch .form-check-input {
+  padding: 0.5rem;
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+  transition: all 300ms ease;
+}
+.theme-color-yellow .form-switch .form-check-input:checked {
+  background-color: var(--bs-primary-tint-80);
+  border-color: var(--bs-primary-tint-80);
+  transition: all 300ms ease;
+}
+.theme-color-pink .form-check-input:checked[type=checkbox] {
+  background-color: theme-color-pink;
+}
+.theme-color-pink .form-switch .form-check-input {
+  padding: 0.5rem;
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+  transition: all 300ms ease;
+}
+.theme-color-pink .form-switch .form-check-input:checked {
+  background-color: var(--bs-primary-tint-80);
+  border-color: var(--bs-primary-tint-80);
+  transition: all 300ms ease;
+}
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+
+.bg-soft-primary {
+  color: var(--bs-primary);
+  background-color: rgba(var(--bs-primary-rgb), 0.1) !important;
+}
+
+.text-info {
+  color: var(--bs-info) !important;
+}
+
+.bg-info {
+  background-color: var(--bs-info) !important;
+}
+
+.bg-soft-info {
+  color: var(--bs-info);
+  background-color: rgba(var(--bs-info-rgb), 0.1) !important;
+}
+
+.accordion-item {
+  background-color: var(--bs-primary-tint-88);
+}
+
+.accordion-header {
+  background-color: var(--bs-primary-tint-88);
+}
+
+.accordion-button {
+  background-color: var(--bs-primary-tint-88);
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--bs-primary-shade-20);
+  background-color: var(--bs-primary-tint-80);
+}
+.accordion-button:focus {
+  border-color: var(--bs-primary-tint-60);
+}
+
+.alert-primary {
+  color: var(--bs-primary);
+  background: var(--bs-primary-tint-80);
+  border-color: var(--bs-primary);
+}
+.alert-primary .alert-link {
+  color: var(--bs-primary-shade-40);
+}
+.alert-primary.alert-solid {
+  color: var(--bs-white);
+  background: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.alert-primary.alert-left {
+  background: rgba(var(--bs-primary-rgb), 0.2);
+  border-color: var(--bs-primary);
+}
+
+.iq-media-group .iq-icon-box-3 {
+  border-color: var(--bs-primary);
+}
+
+.badge {
+  color: var(--bs-white);
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: var(--bs-primary-shade-20);
+}
+.dropdown-item.active, .dropdown-item:active {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+}
+
+.btn.btn-primary {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.btn.btn-primary:hover {
+  color: var(--bs-white);
+  background-color: var(--bs-primary-shade-20);
+  border-color: var(--bs-primary-shade-20);
+}
+.btn.btn-primary:focus {
+  color: var(--bs-white);
+  background-color: var(--bs-primary-shade-20);
+  border-color: var(--bs-primary-shade-20);
+}
+.btn.btn-primary:active, .btn.btn-primary.active {
+  color: var(--bs-white);
+  background-color: var(--bs-primary-shade-20);
+  border-color: var(--bs-primary-shade-20);
+}
+.btn.btn-outline-primary {
+  color: var(--bs-primary-shade-20);
+  border-color: var(--bs-primary-shade-20);
+}
+.btn.btn-outline-primary:hover {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.btn.btn-outline-primary:active, .btn.btn-outline-primary.active {
+  color: var(--bs-white);
+  background-color: var(--bs-primary-shade-20);
+  border-color: var(--bs-primary-shade-20);
+}
+.btn.btn-soft-primary {
+  color: var(--bs-primary);
+  background-color: rgba(var(--bs-primary-rgb), 0.1);
+  border-color: transparent;
+}
+.btn.btn-soft-primary:hover, .btn.btn-soft-primary:focus, .btn.btn-soft-primary:active {
+  color: var(--bs-primary-tint-20);
+  background-color: rgba(var(--bs-primary-rgb), 0.2);
+  border-color: transparent;
+}
+
+.btn.btn-info {
+  color: var(--bs-white);
+  background-color: var(--bs-info);
+  border-color: var(--bs-info);
+}
+.btn.btn-info:hover {
+  color: var(--bs-white);
+  background-color: var(--bs-info-shade-20);
+  border-color: var(--bs-info-shade-20);
+}
+.btn.btn-info:focus {
+  color: var(--bs-white);
+  background-color: var(--bs-info-shade-20);
+  border-color: var(--bs-info-shade-20);
+}
+.btn.btn-info:active, .btn.btn-info.active {
+  color: var(--bs-white);
+  background-color: var(--bs-info-shade-20);
+  border-color: var(--bs-info-shade-20);
+}
+.btn.btn-outline-info {
+  color: var(--bs-info-shade-20);
+  border-color: var(--bs-info-shade-20);
+}
+.btn.btn-outline-info:hover {
+  color: var(--bs-white);
+  background-color: var(--bs-info);
+  border-color: var(--bs-info);
+}
+.btn.btn-outline-info:active, .btn.btn-outline-info.active {
+  color: var(--bs-white);
+  background-color: var(--bs-info-shade-20);
+  border-color: var(--bs-info-shade-20);
+}
+.btn.btn-soft-info {
+  color: var(--bs-info);
+  background-color: rgba(var(--bs-info-rgb), 0.1);
+  border-color: transparent;
+}
+.btn.btn-soft-info:hover, .btn.btn-soft-info:focus, .btn.btn-soft-info:active {
+  color: var(--bs-info-tint-20);
+  background-color: rgba(var(--bs-info-rgb), 0.2);
+  border-color: transparent;
+}
+
+.btn-link {
+  color: var(--bs-primary);
+}
+
+.bd-aside .active {
+  color: var(--bs-primary);
+  background-color: var(--bs-primary-tint-88);
+}
+.bd-aside .btn:hover {
+  color: var(--bs-primary);
+  background-color: var(--bs-primary-tint-88);
+}
+.bd-aside .btn:focus {
+  color: var(--bs-primary);
+  background-color: var(--bs-primary-tint-88);
+  box-shadow: 0 0 0 0.063rem rgba(var(--bs-primary-rgb), 0.7);
+}
+.bd-aside a:hover {
+  background-color: var(--bs-primary-tint-88);
+}
+
+.btn-border.active {
+  border-color: var(--bs-primary);
+}
+
+.list-group-item-primary {
+  color: var(--bs-primary-shade-40);
+  background-color: var(--bs-primary-tint-80);
+}
+.list-group-item-primary.list-group-item-action:hover, .list-group-item-primary.list-group-item-action:focus {
+  color: var(--bs-primary-shade-40);
+  background-color: var(--bs-primary-tint-60);
+}
+
+.list-group-item.active {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.list-group-item-action:not(.active):hover, .list-group-item-action:not(.active):focus {
+  background-color: var(--bg-body);
+}
+.list-group-item-action:not(.active):active {
+  background-color: var(--bs-primary-tint-80);
+}
+
+.form-control {
+  font-size: var(--body-font-size);
+}
+.form-control:focus {
+  border-color: var(--bs-primary-tint-40);
+}
+
+.form-select:focus {
+  border-color: var(--bs-primary-tint-40);
+}
+
+.form-check-input {
+  border-color: var(--bs-primary-shade-20);
+}
+.form-check-input:checked {
+  border-color: var(--bs-primary-shade-20);
+}
+.form-check-input:focus {
+  border-color: var(--bs-primary-shade-20);
+}
+
+.border-primary {
+  border-color: var(--bs-primary) !important;
+}
+
+#top-tab-list li a {
+  color: var(--bs-primary);
+  background: var(--bs-primary-tint-80);
+}
+#top-tab-list li a .iq-icon {
+  background: var(--bs-primary);
+}
+#top-tab-list li.active a {
+  background: var(--bs-primary);
+}
+#top-tab-list li.active a .iq-icon {
+  color: var(--bs-primary);
+}
+
+.nav-link {
+  color: var(--bs-primary);
+}
+.nav-link:hover, .nav-link:focus {
+  color: var(--bs-primary-shade-20);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  box-shadow: 0 0.125rem 0.25rem rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.nav-pills .nav-link.active {
+  color: #fff;
+  background-color: var(--bs-primary);
+}
+
+.nav .search-input.input-group:focus-within .input-group-text, .nav .search-input.input-group:focus-within .form-control {
+  border-color: var(--bs-primary-tint-40);
+}
+.nav .sidebar-toggle {
+  background: var(--bs-primary);
+}
+
+.iq-navbar-header.navs-bg-color .iq-header-img {
+  background-color: var(--bs-primary);
+}
+
+.iq-navbar .dropdown .dropdown-menu.sub-drop .iq-sub-card:hover {
+  background: var(--bs-primary-tint-88);
+}
+
+.page-item.active .page-link {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.page-item .page-link {
+  border-color: var(--bs-primary-tint-80);
+  color: var(--bs-primary);
+}
+
+.table-primary {
+  --bs-table-bg: var(--bs-primary-tint-80);
+  border-color: var(--bs-primary-tint-80);
+}
+
+.type {
+  background: var(--bs-primary);
+}
+
+.prc-box {
+  background: var(--bs-primary-tint-80);
+}
+
+.prc-box.active {
+  background: var(--bs-primary);
+}
+.prc-box.active .type {
+  background: var(--bs-primary-tint-80);
+}
+
+.circle-progress-primary svg .circle-progress-value {
+  stroke: var(--bs-primary);
+}
+.circle-progress-primary svg .circle-progress-text {
+  fill: var(--bs-primary);
+}
+
+.circle-progress-info svg .circle-progress-value {
+  stroke: var(--bs-info);
+}
+.circle-progress-info svg .circle-progress-text {
+  fill: var(--bs-info);
+}
+
+.sidebar .sidebar-toggle {
+  background: var(--bs-primary);
+}
+.sidebar .navbar-brand svg {
+  color: var(--bs-primary);
+}
+.sidebar.sidebar-color .navbar-brand svg {
+  color: #fff;
+}
+
+.sidebar-default .navbar-nav .nav-item .nav-link:not(.disabled).active, .sidebar-default .navbar-nav .nav-item .nav-link:not(.disabled)[aria-expanded=true] {
+  background-color: var(--bs-primary);
+  box-shadow: 0 10px 20px -10px rgba(var(--bs-primary-rgb), 0.4);
+}
+.sidebar-default .navbar-nav .nav-item .nav-link:not(.disabled):hover:not(.active):not([aria-expanded=true]) {
+  background-color: var(--bs-primary-tint-88);
+  color: var(--bs-primary);
+  box-shadow: none;
+}
+
+.sidebar-color {
+  background-color: var(--bs-primary) !important;
+}
+.sidebar-color .navbar-nav .nav-item .nav-link:not(.disabled).active {
+  background-color: #fff;
+  color: var(--bs-primary) !important;
+}
+.sidebar-color .navbar-nav .nav-item .nav-link:not(.disabled)[aria-expanded=true] {
+  background-color: #fff;
+  color: var(--bs-primary) !important;
+}
+.sidebar-color .navbar-nav .nav-item .nav-link:not(.disabled):hover:not(.active):not([aria-expanded=true]) {
+  background-color: rgba(var(--bs-white-rgb), 0.1);
+  color: #fff;
+}
+.sidebar-color .sidebar-header {
+  border-bottom-color: var(--bs-primary-tint-20);
+}
+
+.dual-horizontal {
+  background: var(--bs-primary);
+}
+.dual-horizontal .nav {
+  background: var(--bs-primary);
+}
+
+.boxed {
+  background: var(--bs-primary);
+}
+
+.boxed-fancy::before {
+  background: var(--bs-primary);
+}
+
+.fc-button-primary {
+  color: #fff !important;
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+}
+
+.child-cell.active {
+  color: var(--bs-primary);
+  stroke: var(--bs-primary);
+}
+
+.dark .text-primary {
+  color: var(--bs-primary) !important;
+}
+.dark .bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+.dark .bg-soft-primary {
+  color: var(--bs-primary);
+  background-color: rgba(var(--bs-primary-rgb), 0.1) !important;
+}
+.dark .text-info {
+  color: var(--bs-info) !important;
+}
+.dark .bg-info {
+  background-color: var(--bs-info) !important;
+}
+.dark .bg-soft-info {
+  color: var(--bs-info);
+  background-color: rgba(var(--bs-info-rgb), 0.1) !important;
+}
+.dark .accordion-item {
+  background-color: var(--bs-primary-tint-88);
+}
+.dark .accordion-header {
+  background-color: var(--bs-primary-tint-88);
+}
+.dark .accordion-button {
+  background-color: var(--bs-primary-tint-88);
+}
+.dark .accordion-button:not(.collapsed) {
+  color: var(--bs-primary-shade-20);
+  background-color: var(--bs-primary-tint-80);
+}
+.dark .accordion-button:focus {
+  border-color: var(--bs-primary-tint-60);
+}
+.dark .alert-primary {
+  color: var(--bs-primary);
+  background: var(--bs-primary-tint-80);
+  border-color: var(--bs-primary);
+}
+.dark .alert-primary .alert-link {
+  color: var(--bs-primary-shade-40);
+}
+.dark .alert-primary.alert-solid {
+  color: var(--bs-white);
+  background: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.dark .alert-primary.alert-left {
+  background: rgba(var(--bs-primary-rgb), 0.2);
+  border-color: var(--bs-primary);
+}
+.dark .iq-media-group .iq-icon-box-3 {
+  border-color: var(--bs-primary);
+}
+.dark .badge {
+  color: var(--bs-white);
+}
+.dark .dropdown-item:hover, .dark .dropdown-item:focus {
+  color: var(--bs-primary-shade-20);
+}
+.dark .dropdown-item.active, .dark .dropdown-item:active {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+}
+.dark .btn.btn-primary {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.dark .btn.btn-primary:hover {
+  color: var(--bs-white);
+  background-color: var(--bs-primary-shade-20);
+  border-color: var(--bs-primary-shade-20);
+}
+.dark .btn.btn-primary:focus {
+  color: var(--bs-white);
+  background-color: var(--bs-primary-shade-20);
+  border-color: var(--bs-primary-shade-20);
+}
+.dark .btn.btn-primary:active, .dark .btn.btn-primary.active {
+  color: var(--bs-white);
+  background-color: var(--bs-primary-shade-20);
+  border-color: var(--bs-primary-shade-20);
+}
+.dark .btn.btn-outline-primary {
+  color: var(--bs-primary-shade-20);
+  border-color: var(--bs-primary-shade-20);
+}
+.dark .btn.btn-outline-primary:hover {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.dark .btn.btn-outline-primary:active, .dark .btn.btn-outline-primary.active {
+  color: var(--bs-white);
+  background-color: var(--bs-primary-shade-20);
+  border-color: var(--bs-primary-shade-20);
+}
+.dark .btn.btn-soft-primary {
+  color: var(--bs-primary);
+  background-color: rgba(var(--bs-primary-rgb), 0.1);
+  border-color: transparent;
+}
+.dark .btn.btn-soft-primary:hover, .dark .btn.btn-soft-primary:focus, .dark .btn.btn-soft-primary:active {
+  color: var(--bs-primary-tint-20);
+  background-color: rgba(var(--bs-primary-rgb), 0.2);
+  border-color: transparent;
+}
+.dark .btn.btn-info {
+  color: var(--bs-white);
+  background-color: var(--bs-info);
+  border-color: var(--bs-info);
+}
+.dark .btn.btn-info:hover {
+  color: var(--bs-white);
+  background-color: var(--bs-info-shade-20);
+  border-color: var(--bs-info-shade-20);
+}
+.dark .btn.btn-info:focus {
+  color: var(--bs-white);
+  background-color: var(--bs-info-shade-20);
+  border-color: var(--bs-info-shade-20);
+}
+.dark .btn.btn-info:active, .dark .btn.btn-info.active {
+  color: var(--bs-white);
+  background-color: var(--bs-info-shade-20);
+  border-color: var(--bs-info-shade-20);
+}
+.dark .btn.btn-outline-info {
+  color: var(--bs-info-shade-20);
+  border-color: var(--bs-info-shade-20);
+}
+.dark .btn.btn-outline-info:hover {
+  color: var(--bs-white);
+  background-color: var(--bs-info);
+  border-color: var(--bs-info);
+}
+.dark .btn.btn-outline-info:active, .dark .btn.btn-outline-info.active {
+  color: var(--bs-white);
+  background-color: var(--bs-info-shade-20);
+  border-color: var(--bs-info-shade-20);
+}
+.dark .btn.btn-soft-info {
+  color: var(--bs-info);
+  background-color: rgba(var(--bs-info-rgb), 0.1);
+  border-color: transparent;
+}
+.dark .btn.btn-soft-info:hover, .dark .btn.btn-soft-info:focus, .dark .btn.btn-soft-info:active {
+  color: var(--bs-info-tint-20);
+  background-color: rgba(var(--bs-info-rgb), 0.2);
+  border-color: transparent;
+}
+.dark .btn-link {
+  color: var(--bs-primary);
+}
+.dark .bd-aside .active {
+  color: var(--bs-primary);
+  background-color: var(--bs-primary-tint-88);
+}
+.dark .bd-aside .btn:hover {
+  color: var(--bs-primary);
+  background-color: var(--bs-primary-tint-88);
+}
+.dark .bd-aside .btn:focus {
+  color: var(--bs-primary);
+  background-color: var(--bs-primary-tint-88);
+  box-shadow: 0 0 0 0.063rem rgba(var(--bs-primary-rgb), 0.7);
+}
+.dark .bd-aside a:hover {
+  background-color: var(--bs-primary-tint-88);
+}
+.dark .btn-border.active {
+  border-color: var(--bs-primary);
+}
+.dark .list-group-item-primary {
+  color: var(--bs-primary-shade-40);
+  background-color: var(--bs-primary-tint-80);
+}
+.dark .list-group-item-primary.list-group-item-action:hover, .dark .list-group-item-primary.list-group-item-action:focus {
+  color: var(--bs-primary-shade-40);
+  background-color: var(--bs-primary-tint-60);
+}
+.dark .list-group-item.active {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.dark .list-group-item-action:not(.active):hover, .dark .list-group-item-action:not(.active):focus {
+  background-color: var(--bg-body);
+}
+.dark .list-group-item-action:not(.active):active {
+  background-color: var(--bs-primary-tint-80);
+}
+.dark .form-control {
+  font-size: var(--body-font-size);
+}
+.dark .form-control:focus {
+  border-color: var(--bs-primary-tint-40);
+}
+.dark .form-select:focus {
+  border-color: var(--bs-primary-tint-40);
+}
+.dark .form-check-input {
+  border-color: var(--bs-primary-shade-20);
+}
+.dark .form-check-input:checked {
+  border-color: var(--bs-primary-shade-20);
+}
+.dark .form-check-input:focus {
+  border-color: var(--bs-primary-shade-20);
+}
+.dark .border-primary {
+  border-color: var(--bs-primary) !important;
+}
+.dark #top-tab-list li a {
+  color: var(--bs-primary);
+  background: var(--bs-primary-tint-80);
+}
+.dark #top-tab-list li a .iq-icon {
+  background: var(--bs-primary);
+}
+.dark #top-tab-list li.active a {
+  background: var(--bs-primary);
+}
+.dark #top-tab-list li.active a .iq-icon {
+  color: var(--bs-primary);
+}
+.dark .nav-link {
+  color: var(--bs-primary);
+}
+.dark .nav-link:hover, .dark .nav-link:focus {
+  color: var(--bs-primary-shade-20);
+}
+.dark .nav-tabs .nav-link.active {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  box-shadow: 0 0.125rem 0.25rem rgba(var(--bs-primary-rgb), 0.3);
+}
+.dark .nav-pills .nav-link.active {
+  color: #fff;
+  background-color: var(--bs-primary);
+}
+.dark .nav .search-input.input-group:focus-within .input-group-text, .dark .nav .search-input.input-group:focus-within .form-control {
+  border-color: var(--bs-primary-tint-40);
+}
+.dark .nav .sidebar-toggle {
+  background: var(--bs-primary);
+}
+.dark .iq-navbar-header.navs-bg-color .iq-header-img {
+  background-color: var(--bs-primary);
+}
+.dark .iq-navbar .dropdown .dropdown-menu.sub-drop .iq-sub-card:hover {
+  background: var(--bs-primary-tint-88);
+}
+.dark .page-item.active .page-link {
+  color: var(--bs-white);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.dark .page-item .page-link {
+  border-color: var(--bs-primary-tint-80);
+  color: var(--bs-primary);
+}
+.dark .table-primary {
+  --bs-table-bg: var(--bs-primary-tint-80);
+  border-color: var(--bs-primary-tint-80);
+}
+.dark .type {
+  background: var(--bs-primary);
+}
+.dark .prc-box {
+  background: var(--bs-primary-tint-80);
+}
+.dark .prc-box.active {
+  background: var(--bs-primary);
+}
+.dark .prc-box.active .type {
+  background: var(--bs-primary-tint-80);
+}
+.dark .circle-progress-primary svg .circle-progress-value {
+  stroke: var(--bs-primary);
+}
+.dark .circle-progress-primary svg .circle-progress-text {
+  fill: var(--bs-primary);
+}
+.dark .circle-progress-info svg .circle-progress-value {
+  stroke: var(--bs-info);
+}
+.dark .circle-progress-info svg .circle-progress-text {
+  fill: var(--bs-info);
+}
+.dark .sidebar .sidebar-toggle {
+  background: var(--bs-primary);
+}
+.dark .sidebar .navbar-brand svg {
+  color: var(--bs-primary);
+}
+.dark .sidebar.sidebar-color .navbar-brand svg {
+  color: #fff;
+}
+.dark .sidebar-default .navbar-nav .nav-item .nav-link:not(.disabled).active, .dark .sidebar-default .navbar-nav .nav-item .nav-link:not(.disabled)[aria-expanded=true] {
+  background-color: var(--bs-primary);
+  box-shadow: 0 10px 20px -10px rgba(var(--bs-primary-rgb), 0.4);
+}
+.dark .sidebar-default .navbar-nav .nav-item .nav-link:not(.disabled):hover:not(.active):not([aria-expanded=true]) {
+  background-color: var(--bs-primary-tint-88);
+  color: var(--bs-primary);
+  box-shadow: none;
+}
+.dark .sidebar-color {
+  background-color: var(--bs-primary) !important;
+}
+.dark .sidebar-color .navbar-nav .nav-item .nav-link:not(.disabled).active {
+  background-color: #fff;
+  color: var(--bs-primary) !important;
+}
+.dark .sidebar-color .navbar-nav .nav-item .nav-link:not(.disabled)[aria-expanded=true] {
+  background-color: #fff;
+  color: var(--bs-primary) !important;
+}
+.dark .sidebar-color .navbar-nav .nav-item .nav-link:not(.disabled):hover:not(.active):not([aria-expanded=true]) {
+  background-color: rgba(var(--bs-white-rgb), 0.1);
+  color: #fff;
+}
+.dark .sidebar-color .sidebar-header {
+  border-bottom-color: var(--bs-primary-tint-20);
+}
+.dark .dual-horizontal {
+  background: var(--bs-primary);
+}
+.dark .dual-horizontal .nav {
+  background: var(--bs-primary);
+}
+.dark .boxed {
+  background: var(--bs-primary);
+}
+.dark .boxed-fancy::before {
+  background: var(--bs-primary);
+}
+.dark .sidebar-default .navbar-nav .nav-item .nav-link:not(.disabled):hover:not(.active):not([aria-expanded=true]) {
+  background-color: rgba(var(--bs-primary-rgb), 0.2);
+}
+.dark .fc-button-primary {
+  color: #fff !important;
+  background-color: var(--bs-primary) !important;
+  border-color: var(--bs-primary) !important;
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.bg-primary {
+  background-color: var(--bs-primary) !important;
+}
+
+.bg-soft-primary {
+  color: var(--bs-primary);
+  background-color: rgba(var(--bs-primary-rgb), 0.1) !important;
+}
+
+.text-info {
+  color: var(--bs-info) !important;
+}
+
+.bg-info {
+  background-color: var(--bs-info) !important;
+}
+
+.bg-soft-info {
+  color: var(--bs-info);
+  background-color: rgba(var(--bs-info-rgb), 0.1) !important;
+}
