@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+=======
 /vendor/
 node_modules/
 npm-debug.log
@@ -28,3 +43,4 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+>>>>>>> 13507bd5780b3a2782d6a48fdb8f97f96826cf9d
