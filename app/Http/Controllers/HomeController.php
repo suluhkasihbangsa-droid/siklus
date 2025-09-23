@@ -2,234 +2,126 @@
 
 namespace App\Http\Controllers;
 
+// Pastikan semua model yang Anda butuhkan sudah di-import
 use App\Models\Sasaran;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Models\Pemeriksaan;
 use App\Models\Konsultasi;
+use App\Models\User;
+use App\Models\Organisasi; // Tambahkan ini
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Models\User; 
 
 class HomeController extends Controller
 {
-
-    /*
+    /**
      * Dashboard Pages Routs
      */
     public function index(Request $request)
     {
-        // 1. Aset asli Anda tetap dipertahankan
+        // ================================================================
+        // BAGIAN 1: PERSIAPAN FILTER & DATA AWAL
+        // ================================================================
         $assets = ['chart', 'animation'];
-
-        // 2. Ambil data user yang login
         $user = Auth::user();
 
+        $filterOrganisasiId = $request->input('organisasi_id');
+        $filterTanggalMulai = $request->input('tanggal_mulai');
+        $filterTanggalSelesai = $request->input('tanggal_selesai');
+
+        // Ambil daftar organisasi HANYA jika admin, untuk mengisi dropdown filter
+        $organisasiList = $user->hasRole('admin') ? Organisasi::orderBy('nama_organisasi')->get() : [];
+
         // ================================================================
-        // LOGIKA UNTUK KARTU 1: DIREGISTER
+        // BAGIAN 2: PENENTUAN ID ORGANISASI YANG AKAN DIAKSES (LOGIKA KUNCI)
         // ================================================================
-        $totalSasaran = Sasaran::count();
-        $jumlahSasaranDiregister = 0;
-        $persentaseSasaranDiregister = 0;
         $accessibleOrganisasiIds = [];
-        $totalSasaranOrganisasi = 0;
-
         if ($user->hasRole('admin')) {
-            $jumlahSasaranDiregister = $totalSasaran;
-            $persentaseSasaranDiregister = 100;
+            if ($filterOrganisasiId) {
+                // Jika admin memfilter, ambil ID induk dan SEMUA anak-anaknya.
+                $accessibleOrganisasiIds = $this->getAllChildOrgIds($filterOrganisasiId);
+                // Jangan lupa tambahkan ID induk itu sendiri ke dalam array.
+                $accessibleOrganisasiIds[] = (int)$filterOrganisasiId;
+            } else {
+                // Jika admin tidak memfilter, maka dia bisa akses semua organisasi.
+                $accessibleOrganisasiIds = Organisasi::pluck('id')->toArray();
+            }
         } else {
+            // Jika bukan admin, gunakan fungsi yang sudah ada di model User untuk mendapatkan organisasinya.
             $accessibleOrganisasiIds = $user->getAccessibleOrganisasiIds();
-            $totalSasaranOrganisasi = Sasaran::whereIn('organisasi_id', $accessibleOrganisasiIds)->count();
-            $jumlahSasaranDiregister = $totalSasaranOrganisasi;
-
-            if ($totalSasaran > 0) {
-                $persentaseSasaranDiregister = ($jumlahSasaranDiregister / $totalSasaran) * 100;
-            }
         }
 
         // ================================================================
-        // LOGIKA UNTUK KARTU 2: DIPERIKSA
+        // BAGIAN 3: MEMBUAT QUERY DASAR YANG SUDAH TERFILTER
         // ================================================================
-        $jumlahSasaranDiperiksa = 0;
-        $persentaseSasaranDiperiksa = 0;
 
-        if ($user->hasRole('admin')) {
-            $jumlahSasaranDiperiksa = Pemeriksaan::distinct('sasaran_id')->count('sasaran_id');
-            if ($totalSasaran > 0) {
-                $persentaseSasaranDiperiksa = ($jumlahSasaranDiperiksa / $totalSasaran) * 100;
-            }
-        } else {
-            $jumlahSasaranDiperiksa = Pemeriksaan::whereHas('sasaran', function ($query) use ($accessibleOrganisasiIds) {
-                $query->whereIn('organisasi_id', $accessibleOrganisasiIds);
-            })->distinct('sasaran_id')->count('sasaran_id');
+        // Query dasar untuk Sasaran (digunakan untuk data registrasi)
+        $sasaranQuery = Sasaran::whereIn('organisasi_id', $accessibleOrganisasiIds)
+            ->when($filterTanggalMulai && $filterTanggalSelesai, function ($q) use ($filterTanggalMulai, $filterTanggalSelesai) {
+                return $q->whereBetween('created_at', [$filterTanggalMulai, $filterTanggalSelesai]);
+            });
 
-            if ($totalSasaranOrganisasi > 0) {
-                $persentaseSasaranDiperiksa = ($jumlahSasaranDiperiksa / $totalSasaranOrganisasi) * 100;
-            }
-        }
+        // Query dasar untuk Pemeriksaan (digunakan untuk data medis dan chart)
+        $pemeriksaanQuery = Pemeriksaan::whereHas('sasaran', function ($q) use ($accessibleOrganisasiIds) {
+                $q->whereIn('organisasi_id', $accessibleOrganisasiIds);
+            })
+            ->when($filterTanggalMulai && $filterTanggalSelesai, function ($q) use ($filterTanggalMulai, $filterTanggalSelesai) {
+                // Ganti 'tanggal_pemeriksaan' jika nama kolom tanggal di tabel pemeriksaans berbeda
+                return $q->whereBetween('tanggal_pemeriksaan', [$filterTanggalMulai, $filterTanggalSelesai]);
+            });
 
         // ================================================================
-        // LOGIKA UNTUK KARTU 3: KONSULTASI
+        // BAGIAN 4: EKSEKUSI QUERY & HITUNG SEMUA STATISTIK DARI HASILNYA
         // ================================================================
-        $jumlahSasaranKonsultasi = 0;
-        $persentaseSasaranKonsultasi = 0;
+        $sasaransFiltered = $sasaranQuery->get();
+        $pemeriksaansFiltered = $pemeriksaanQuery->with('konsultasis')->get(); // with('konsultasis') untuk efisiensi
 
-        if ($user->hasRole('admin')) {
-            // Admin: Hitung sasaran unik yang memiliki konsultasi
-            // FIX: Mengubah 'konsultasi' menjadi 'konsultasis' (plural)
-            $jumlahSasaranKonsultasi = Sasaran::whereHas('pemeriksaans.konsultasis')->count();
-            if ($totalSasaran > 0) {
-                $persentaseSasaranKonsultasi = ($jumlahSasaranKonsultasi / $totalSasaran) * 100;
-            }
-        } else {
-            // Non-Admin: Hitung sasaran unik yang memiliki konsultasi dari organisasi yang bisa diakses
-            // FIX: Mengubah 'konsultasi' menjadi 'konsultasis' (plural)
-            $jumlahSasaranKonsultasi = Sasaran::whereIn('organisasi_id', $accessibleOrganisasiIds)
-                                              ->whereHas('pemeriksaans.konsultasis')
-                                              ->count();
-            if ($totalSasaranOrganisasi > 0) {
-                $persentaseSasaranKonsultasi = ($jumlahSasaranKonsultasi / $totalSasaranOrganisasi) * 100;
-            }
-        }
+        // --- KARTU-KARTU STATISTIK ---
+        $totalSasaranGlobal = Sasaran::count();
+        $jumlahSasaranDiregister = $sasaransFiltered->count();
+        $persentaseSasaranDiregister = ($totalSasaranGlobal > 0) ? ($jumlahSasaranDiregister / $totalSasaranGlobal) * 100 : 0;
+        
+        $jumlahSasaranDiperiksa = $pemeriksaansFiltered->unique('sasaran_id')->count();
+        $persentaseSasaranDiperiksa = ($jumlahSasaranDiregister > 0) ? ($jumlahSasaranDiperiksa / $jumlahSasaranDiregister) * 100 : 0;
 
-        // ================================================================
-        // FUNGSI BANTU UNTUK MENGAMBIL DATA CHART (AGAR TIDAK REPETITIF)
-        // ================================================================
-        $getChartData = function ($column) use ($user, $accessibleOrganisasiIds) {
-            $query = Pemeriksaan::select($column, DB::raw('count(*) as total'))
-                ->whereNotNull($column)
-                ->where($column, '!=', '-')
-                ->groupBy($column);
+        $jumlahSasaranKonsultasi = Sasaran::whereIn('id', $sasaransFiltered->pluck('id'))
+                                           ->whereHas('pemeriksaans.konsultasis')
+                                           ->count();
+        $persentaseSasaranKonsultasi = ($jumlahSasaranDiregister > 0) ? ($jumlahSasaranKonsultasi / $jumlahSasaranDiregister) * 100 : 0;
 
-            if (!$user->hasRole('admin')) {
-                $query->whereHas('sasaran', function ($q) use ($accessibleOrganisasiIds) {
-                    $q->whereIn('organisasi_id', $accessibleOrganisasiIds);
-                });
-            }
-            return $query->pluck('total', $column);
+        // --- DATA UNTUK SEMUA CHART ---
+        $getChartData = function($column) use ($pemeriksaansFiltered) {
+            return $pemeriksaansFiltered->whereNotNull($column)->where($column, '!=', '-')->groupBy($column)->map->count();
         };
-
-        // ================================================================
-        // AMBIL DATA UNTUK SEMUA CHART
-        // ================================================================
-        // 1. IMT
         $imtData = $getChartData('int_imt');
-        $imtChartLabels = $imtData->keys();
-        $imtChartData = $imtData->values();
-
-        // 2. Tensi
         $tensiData = $getChartData('int_tensi');
-        $tensiChartLabels = $tensiData->keys();
-        $tensiChartData = $tensiData->values();
-
-        // 3. Kolesterol
         $kolesterolData = $getChartData('int_koles');
-        $kolesterolChartLabels = $kolesterolData->keys();
-        $kolesterolChartData = $kolesterolData->values();
-
-        // 4. Asam Urat
         $asamUratData = $getChartData('int_asut');
-        $asamUratChartLabels = $asamUratData->keys();
-        $asamUratChartData = $asamUratData->values();
+        $gulaDarahData = $getChartData('int_gd'); // <-- DATA BARU UNTUK GULA DARAH
+        $chartColors = ['#3a57e8', '#4bc7d2', '#fd7e14', '#dc3545', '#6f42c1', '#ffc107'];
 
-        // Siapkan warna untuk chart
-        $chartColors = ['#3a57e8', '#4bc7d2', '#fd7e14', '#dc3545', '#6f42c1'];
+        // --- DATA BARU UNTUK CHART PERBANDINGAN PIE ---
+        $comparisonChartLabels = ['Diregister', 'Diperiksa', 'Konsultasi'];
+        $comparisonChartData = [$jumlahSasaranDiregister, $jumlahSasaranDiperiksa, $jumlahSasaranKonsultasi];
 
-        // ================================================================
-        // LOGIKA UNTUK KARTU RINGKASAN (PENGGUNA & DOKTER)
-        // ================================================================
-        $cardKiriJudul = '';
-        $cardKiriNilai = 0;
-        $cardKananJudul = '';
-        $cardKananNilai = 0;
+        // --- LOGIKA UNTUK KARTU RINGKASAN (PENGGUNA & DOKTER) ---
+        // (Logika Anda sebelumnya)
+        $cardKiriJudul = 'Total Pengguna';
+        $cardKiriNilai = User::role(['user', 'koorUser'])->count();
+        $cardKananJudul = 'Total Dokter';
+        $cardKananNilai = User::role('dokter')->count();
 
-        // Logika untuk Admin, User, dan KoorUser
-        if ($user->hasRole('admin')) {
-            $cardKiriJudul = 'Total Pengguna';
-            // Menggunakan Spatie/Permission untuk menghitung user berdasarkan peran
-            $cardKiriNilai = User::role(['user', 'koorUser'])->count();
-            
-            $cardKananJudul = 'Total Dokter';
-            $cardKananNilai = User::role('dokter')->count();
-
-        } elseif ($user->hasRole(['user', 'koorUser'])) {
-            $cardKiriJudul = 'Pengguna di Organisasi';
-            // Menghitung user/koorUser yang terhubung dengan organisasi yang bisa diakses
-            $cardKiriNilai = User::role(['user', 'koorUser'])
-                ->whereHas('organisasis', function ($query) use ($accessibleOrganisasiIds) {
-                    $query->whereIn('organisasi_id', $accessibleOrganisasiIds);
-                })->count();
-
-            $cardKananJudul = 'Dokter di Organisasi';
-            // Menghitung dokter yang terhubung dengan organisasi yang bisa diakses
-            $cardKananNilai = User::role('dokter')
-                ->whereHas('organisasis', function ($query) use ($accessibleOrganisasiIds) {
-                    $query->whereIn('organisasi_id', $accessibleOrganisasiIds);
-                })->count();
-
-        } elseif ($user->hasRole('dokter')) {
-            $cardKiriJudul = 'Siap Konsultasi';
-            // FIX: Menghitung sasaran yang SUDAH diperiksa TAPI BELUM dikonsultasi
-            $cardKiriNilai = Sasaran::whereIn('organisasi_id', $accessibleOrganisasiIds)
-                ->whereHas('pemeriksaans') // <-- Kondisi 1: Sudah punya data pemeriksaan
-                ->whereDoesntHave('pemeriksaans.konsultasis') // <-- Kondisi 2: Tapi belum punya data konsultasi
-                ->count();
-
-            // SARAN: Judul diubah agar lebih sesuai dengan data
-            $cardKananJudul = 'Sudah Konsultasi'; 
-            // FIX: Menghitung sasaran yang SUDAH mempunyai konsultasi
-            $cardKananNilai = Sasaran::whereIn('organisasi_id', $accessibleOrganisasiIds)
-                ->whereHas('pemeriksaans.konsultasis')
-                ->count();
-        }
+        // --- LOGIKA UNTUK FEED AKTIVITAS TERBARU (Kini sudah terfilter) ---
+        $aktivitasQueryIds = $user->hasRole('admin') && $filterOrganisasiId ? [$filterOrganisasiId] : $accessibleOrganisasiIds;
+        
+        $sasaranTerbaru = DB::table('sasarans')->select(DB::raw("CONCAT('Sasaran baru: ', nama_lengkap) as teks"), 'created_at as tanggal')->whereIn('organisasi_id', $aktivitasQueryIds);
+        $pemeriksaanTerbaru = DB::table('pemeriksaans')->join('sasarans', 'pemeriksaans.sasaran_id', '=', 'sasarans.id')->select(DB::raw("CONCAT('Pemeriksaan untuk ', sasarans.nama_lengkap) as teks"), 'pemeriksaans.created_at as tanggal')->whereIn('sasarans.organisasi_id', $aktivitasQueryIds);
+        $konsultasiTerbaru = DB::table('konsultasis')->join('pemeriksaans', 'konsultasis.pemeriksaan_id', '=', 'pemeriksaans.id')->join('sasarans', 'pemeriksaans.sasaran_id', '=', 'sasarans.id')->select(DB::raw("CONCAT('Konsultasi untuk ', sasarans.nama_lengkap) as teks"), 'konsultasis.created_at as tanggal')->whereIn('sasarans.organisasi_id', $aktivitasQueryIds);
+        
+        $aktivitasTerbaru = $sasaranTerbaru->unionAll($pemeriksaanTerbaru)->unionAll($konsultasiTerbaru)->orderBy('tanggal', 'desc')->limit(5)->get();
 
         // ================================================================
-        // LOGIKA UNTUK FEED AKTIVITAS TERBARU
-        // ================================================================
-        // Query 1: Mengambil 5 sasaran terbaru
-        $sasaranTerbaru = DB::table('sasarans')
-            ->join('organisasis', 'sasarans.organisasi_id', '=', 'organisasis.id')
-            ->select(
-                DB::raw("CONCAT('Sasaran baru: ', sasarans.nama_lengkap) as teks"),
-                'sasarans.created_at as tanggal',
-                DB::raw("'sasaran' as tipe")
-            );
-
-        // Query 2: Mengambil 5 pemeriksaan terbaru
-        $pemeriksaanTerbaru = DB::table('pemeriksaans')
-            ->join('sasarans', 'pemeriksaans.sasaran_id', '=', 'sasarans.id')
-            ->select(
-                DB::raw("CONCAT('Pemeriksaan untuk ', sasarans.nama_lengkap) as teks"),
-                'pemeriksaans.created_at as tanggal',
-                DB::raw("'pemeriksaan' as tipe")
-            );
-
-        // Query 3: Mengambil 5 konsultasi terbaru
-        $konsultasiTerbaru = DB::table('konsultasis')
-            ->join('pemeriksaans', 'konsultasis.pemeriksaan_id', '=', 'pemeriksaans.id')
-            ->join('sasarans', 'pemeriksaans.sasaran_id', '=', 'sasarans.id')
-            ->select(
-                DB::raw("CONCAT('Konsultasi untuk ', sasarans.nama_lengkap) as teks"),
-                'konsultasis.created_at as tanggal',
-                DB::raw("'konsultasi' as tipe")
-            );
-            
-        // Terapkan filter organisasi untuk non-admin
-        if (!$user->hasRole('admin')) {
-            $sasaranTerbaru->whereIn('sasarans.organisasi_id', $accessibleOrganisasiIds);
-            $pemeriksaanTerbaru->whereIn('sasarans.organisasi_id', $accessibleOrganisasiIds);
-            $konsultasiTerbaru->whereIn('sasarans.organisasi_id', $accessibleOrganisasiIds);
-        }
-
-        // Gabungkan ketiga query, urutkan, dan ambil 5 teratas
-        $aktivitasTerbaru = $sasaranTerbaru
-            ->unionAll($pemeriksaanTerbaru)
-            ->unionAll($konsultasiTerbaru)
-            ->orderBy('tanggal', 'desc')
-            ->limit(5)
-            ->get();
-
-        // ================================================================
-        // KIRIM SEMUA DATA KE VIEW
+        // BAGIAN 5: KIRIM SEMUA DATA KE VIEW
         // ================================================================
         return view('dashboards.dashboard', [
             'assets' => $assets,
@@ -240,12 +132,33 @@ class HomeController extends Controller
             'tensiChartLabels' => $tensiData->keys(), 'tensiChartData' => $tensiData->values(),
             'kolesterolChartLabels' => $kolesterolData->keys(), 'kolesterolChartData' => $kolesterolData->values(),
             'asamUratChartLabels' => $asamUratData->keys(), 'asamUratChartData' => $asamUratData->values(),
+            'gulaDarahChartLabels' => $gulaDarahData->keys(), 'gulaDarahChartData' => $gulaDarahData->values(), // <-- KIRIM DATA GULA DARAH
             'chartColors' => $chartColors,
             'cardKiriJudul' => $cardKiriJudul, 'cardKiriNilai' => $cardKiriNilai,
             'cardKananJudul' => $cardKananJudul, 'cardKananNilai' => $cardKananNilai,
-            'aktivitasTerbaru' => $aktivitasTerbaru
+            'aktivitasTerbaru' => $aktivitasTerbaru,
+            'comparisonChartLabels' => $comparisonChartLabels, // <-- KIRIM DATA PIE BARU
+            'comparisonChartData' => $comparisonChartData,     // <-- KIRIM DATA PIE BARU
+
+            // Variabel untuk filter
+            'organisasiList' => $organisasiList,
+            'filters' => $request->all()
         ]);
     }
+
+    private function getAllChildOrgIds($parentId)
+    {
+        $allChildIds = [];
+        // Ambil anak-anak langsung dari parentId
+        $children = Organisasi::where('parent_id', $parentId)->pluck('id');
+
+        // Untuk setiap anak, tambahkan ID-nya dan cari anak-anaknya lagi
+        foreach ($children as $childId) {
+            $allChildIds[] = $childId;
+            $allChildIds = array_merge($allChildIds, $this->getAllChildOrgIds($childId));
+        }
+        return $allChildIds;
+    }    
 
     /*
      * Menu Style Routs
@@ -253,27 +166,27 @@ class HomeController extends Controller
     public function horizontal(Request $request)
     {
         $assets = ['chart', 'animation'];
-        return view('menu-style.horizontal',compact('assets'));
+        return view('menu-style.horizontal', compact('assets'));
     }
     public function dualhorizontal(Request $request)
     {
         $assets = ['chart', 'animation'];
-        return view('menu-style.dual-horizontal',compact('assets'));
+        return view('menu-style.dual-horizontal', compact('assets'));
     }
     public function dualcompact(Request $request)
     {
         $assets = ['chart', 'animation'];
-        return view('menu-style.dual-compact',compact('assets'));
+        return view('menu-style.dual-compact', compact('assets'));
     }
     public function boxed(Request $request)
     {
         $assets = ['chart', 'animation'];
-        return view('menu-style.boxed',compact('assets'));
+        return view('menu-style.boxed', compact('assets'));
     }
     public function boxedfancy(Request $request)
     {
         $assets = ['chart', 'animation'];
-        return view('menu-style.boxed-fancy',compact('assets'));
+        return view('menu-style.boxed-fancy', compact('assets'));
     }
 
     /*
@@ -287,7 +200,7 @@ class HomeController extends Controller
     public function calender(Request $request)
     {
         $assets = ['calender'];
-        return view('special-pages.calender',compact('assets'));
+        return view('special-pages.calender', compact('assets'));
     }
 
     public function kanban(Request $request)
@@ -412,7 +325,7 @@ class HomeController extends Controller
         return view('forms.validation');
     }
 
-     /*
+    /*
      * Table Page Routs
      */
     public function bootstraptable(Request $request)

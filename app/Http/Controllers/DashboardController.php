@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Sasaran; // <-- Import model Sasaran
+use App\Models\Sasaran;
+use App\Models\Organisasi;
 use Illuminate\Support\Facades\Auth; // <-- Import Fassad Auth
 
 class DashboardController extends Controller
