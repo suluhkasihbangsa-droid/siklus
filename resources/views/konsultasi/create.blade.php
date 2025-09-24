@@ -59,7 +59,9 @@
                                         <tr><th style="width: 40%;">IMT</th><td>: {{ $pemeriksaan->imt ?? '-' }} ({{ $pemeriksaan->int_imt ?? '-' }})</td></tr>
                                         <tr><th>Tensi</th><td>: {{ $pemeriksaan->tensi_sistolik ?? '-' }}/{{ $pemeriksaan->tensi_diastolik ?? '-' }} ({{ $pemeriksaan->int_tensi ?? '-' }})</td></tr>
                                         <tr><th>Gula Darah</th><td>: {{ $pemeriksaan->gd ?? '-' }} mg/dL ({{ $pemeriksaan->int_gd ?? '-' }})</td></tr>
+                                        <tr><th>Asam Urat</th><td>: {{ $pemeriksaan->asut ?? '-' }} mg/dL ({{ $pemeriksaan->int_asut ?? '-' }})</td></tr>
                                         <tr><th>Kolesterol</th><td>: {{ $pemeriksaan->koles ?? '-' }} mg/dL ({{ $pemeriksaan->int_koles ?? '-' }})</td></tr>
+                                        <tr><th>Keluhan</th><td>: {{ $pemeriksaan->keluhan_awal ?? '-' }} </td></tr>
                                     </table>
                                 </div>
                             </div>
